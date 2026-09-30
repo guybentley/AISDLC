@@ -1,17 +1,17 @@
 # AI SDLC
 
-An open framework for running a software delivery lifecycle where AI agents do much of the drafting and humans own the judgment.
+An open framework for running a software delivery lifecycle as a partnership: engineers and AI agents work as a pair, agents bring speed, and engineers bring judgment and accountability.
 
 > **Status:** early draft. Structure and agent specs are being written in the open. Expect change.
 
 ## The idea
 
-AI makes writing code cheap. The constraint moves to two places:
+AI enhances the speed of writing code. That moves the constraint to two places:
 
 1. **Specifying what to build** - a clear problem, a shared design, testable acceptance criteria.
 2. **Verifying what was built** - independent tests, adversarial review, safe release.
 
-This framework rebalances the lifecycle around those two ends. It is not a coding-assistant rollout; it is a way of working.
+This framework rebalances the lifecycle around those two ends. It is not a coding-assistant rollout; it is a way of working, in which the engineer and the agent do each stage together and the engineer decides.
 
 ## The lifecycle
 
