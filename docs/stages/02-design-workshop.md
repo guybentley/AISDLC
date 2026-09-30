@@ -10,8 +10,10 @@ Design the solution live, with product, platform and software in the room, using
 
 ## Format
 
-1. **Backbone (Product leads):** the customer journey, step by step, in plain language.
-2. **Ribs:** what the customer does or needs at each step.
+The workshop starts from the empty [story map](../../templates/story-map.md) prepared in [stage 1](01-problem-brief.md).
+
+1. **Backbone (Product leads):** walk the team through the prepared customer journey, step by step, in plain language. The team challenges it and changes it where it is wrong.
+2. **Ribs:** what the customer does or needs at each step, including the stories for the points where things go wrong.
 3. **Slice:** draw the line for the thinnest end-to-end version that delivers value, then later slices.
 4. **Annotate (Platform and Software):** for each step in the first slice, mark what exists, what is new, what is risky and what is unknown.
 5. **Decide:** record design decisions, reasons and open questions.
