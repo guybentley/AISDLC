@@ -8,16 +8,16 @@ An open framework for running a software delivery lifecycle as a partnership: en
 
 AI enhances the speed of writing code. That moves the constraint to two places:
 
-1. **Specifying what to build** - a clear problem, a shared design, testable acceptance criteria.
+1. **Specifying what to build** - a clear customer opportunity, a shared design, testable acceptance criteria.
 2. **Verifying what was built** - independent tests, adversarial review, safe release.
 
-This framework rebalances the lifecycle around those two ends. It is not a coding-assistant rollout; it is a way of working, in which the engineer and the agent do each stage together and the engineer decides.
+This framework rebalances the lifecycle around those two ends. It is not a coding-assistant rollout; it is a way of working, in which people and agents do each stage together and the accountable person decides.
 
 ## The lifecycle
 
 | # | Stage | Human owns | Agents help with |
 |---|---|---|---|
-| 1 | [Problem brief](docs/stages/01-problem-brief.md) | Customer problem, outcomes, constraints | Stripping solution detail, finding gaps |
+| 1 | [Opportunity brief](docs/stages/01-opportunity-brief.md) | Customer opportunity, outcomes, constraints | Stripping solution detail, finding gaps |
 | 2 | [Design workshop](docs/stages/02-design-workshop.md) | The design, decisions, trade-offs | Context, scribing, challenge, stack checks |
 | 3 | [Stories and sizing](docs/stages/03-stories-and-sizing.md) | Scope and priority | Story writing, acceptance criteria, size checks |
 | 4 | [Build](docs/stages/04-build.md) | The pull request | Implementation |
@@ -30,11 +30,11 @@ Acceptance criteria written at stage 3 are the thread: the test author, the revi
 
 - [`docs/`](docs/) - principles, lifecycle, one page per stage, adoption and metrics
 - [`agents/`](agents/) - one spec per agent: purpose, inputs, outputs, human gate, draft prompt, failure modes
-- [`templates/`](templates/) - artefacts the process produces, such as the problem brief
+- [`templates/`](templates/) - artefacts the process produces, such as the opportunity brief
 
 ## Principles
 
-Read [docs/principles.md](docs/principles.md) first. In short: humans stay accountable at defined gates; the author never is the only tester; specs are the primary artefact; measure before and after.
+Read [docs/principles.md](docs/principles.md) first. In short: people and agents work as a pair and swap roles; the opportunity, the design and the acceptance criteria come first; verification is independent from creation; people hold defined gates; a squad owns the solution; and context lives where agents can read it, with an owner.
 
 ## Contributing
 

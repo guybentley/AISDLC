@@ -1,8 +1,8 @@
 # Stage 6: Release
 
-**Human owner:** On-call / release owner
-**Agents:** [release-verifier](../../agents/release-verifier.md)
-**Output:** a verified release or an automatic rollback
+- **Human owner:** On-call / release owner
+- **Agents:** [release-verifier](../../agents/release-verifier.md)
+- **Output:** a verified release or an automatic rollback
 
 ## Purpose
 

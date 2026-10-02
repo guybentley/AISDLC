@@ -7,7 +7,7 @@
 Builds initiatives, epics and stories from the story map and design note, each with testable acceptance criteria.
 
 ## Inputs
-Story map, design note, problem brief.
+Story map, design note, opportunity brief.
 
 ## Outputs
 A roadmap: initiatives, epics, stories. Each story has a trace to a map step and acceptance criteria written as observable behaviour.

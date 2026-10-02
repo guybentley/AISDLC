@@ -1,8 +1,8 @@
 # Stage 3: Stories and sizing
 
-**Human owners:** Product (scope, priority), Engineering (breakdown, sizing)
-**Agents:** [story-writer](../../agents/story-writer.md), [right-size-checker](../../agents/right-size-checker.md)
-**Output:** initiatives, epics and stories, each with testable acceptance criteria and a trace to the story map
+- **Human owners:** Product (scope, priority), Engineering (breakdown, sizing)
+- **Agents:** [story-writer](../../agents/story-writer.md), [right-size-checker](../../agents/right-size-checker.md)
+- **Output:** initiatives, epics and stories, each with testable acceptance criteria and a trace to the story map
 
 ## Purpose
 
