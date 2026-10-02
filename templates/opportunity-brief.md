@@ -1,32 +1,46 @@
-# Problem brief: <title>
+# Opportunity brief: <title>
 
-**Owner:** <product lead>  **Date:** <date>  **Status:** draft / ready for workshop
+**Owner:** <product manager>  **Date:** <date>  **Status:** draft / reviewed by brief-coach / ready for workshop
 
 ## Customer
 Who are they, and what are they trying to do?
 
-## Problem
-What is going wrong for the customer? Write it in plain language, so that anyone in your industry could read it and understand it. No internal jargon, code names or unexplained acronyms. Use a number where you can.
+## Opportunity
+What is the opportunity for the customer? It may be a problem to solve, or a benefit they would value. Write it in plain language, so that anyone in your industry could read it and understand it. No internal jargon, code names or unexplained acronyms. Use a number where you can.
 
 ## Evidence
 How do we know? List each source and what it showed. Prefer more than one method.
 
 | Method | Source and date | What it showed |
 |---|---|---|
-| Measured failure in the current system | e.g. drop-out rate at each step of the process | |
+| Measured the current system | e.g. drop-out rate at each step of a process (a problem), or how many customers already use a workaround or ask for the capability (a benefit) | |
 | Customer survey | e.g. sample size, questions asked | |
 | Customer interviews | e.g. number of interviews, who | |
 
 If one method is missing, say what it would add.
 
 ## Outcome
-What would be true if this were solved? How will we measure it, and where are we today?
+What would be true if this were delivered? How will we measure it, and where are we today?
 
 | Outcome | Measure | Baseline (today) | Target |
 |---|---|---|---|
-| e.g. more customers finish onboarding | e.g. % who start onboarding and do not finish | e.g. measured over the last 90 days | |
+| e.g. more customers finish onboarding (a problem solved) | e.g. % who start onboarding and do not finish | e.g. measured over the last 90 days | |
+| e.g. customers save time on a routine task (a benefit delivered) | e.g. average minutes to complete the task | e.g. measured over the last 90 days | |
 
-Say how approaches will be compared, for example an A/B test, or a before and after comparison if there are too few customers for a fair test. Do not choose the approach here.
+Record the measure, the baseline and the target. If there is no baseline because this is new, write "none" and say how one will be established, for example by measuring the first release or using a comparable product as a reference. Do not say how to reach the target.
+
+## Scale
+How big is the opportunity? If the existing system already gives these figures, say where they come from. If not, give your best estimate and mark it as one. A range is fine.
+
+| Measure | Figure or range | Known or estimated, and the basis |
+|---|---|---|
+| Number of customers or users | | |
+| Transactions or requests per day | | |
+| Busiest period (peak) | | |
+| Expected growth | | |
+| Amount of data | | |
+
+Give the scale only. Do not say how to handle it.
 
 ## Customer workflows
 How does a customer transact, start to finish? Show the happy path and where each failure branches off. Keep it at the customer level: what they do and see, with no systems or technology.

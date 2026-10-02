@@ -1,8 +1,8 @@
 # Stage 5: Verification
 
-**Human owner:** The reviewer with merge authority
-**Agents:** [test-author](../../agents/test-author.md), [adversarial-reviewer](../../agents/adversarial-reviewer.md)
-**Output:** independent tests, review findings and responses, a merge decision
+- **Human owner:** The reviewer with merge authority
+- **Agents:** [test-author](../../agents/test-author.md), [adversarial-reviewer](../../agents/adversarial-reviewer.md)
+- **Output:** independent tests, review findings and responses, a merge decision
 
 ## Purpose
 

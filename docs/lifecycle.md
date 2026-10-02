@@ -1,10 +1,10 @@
 # Lifecycle overview
 
 ```
-Problem brief -> Design workshop -> Stories & sizing -> Build -> Verification -> Release
-   (Product)       (Product +          (Product +         (Engineer)  (Independent     (On-call)
-                    Platform +          Engineering)                    tests + review)
-                    Software)
+Opportunity brief -> Design workshop -> Stories & sizing -> Build -> Verification -> Release
+   (Product)           (Product +          (Product +         (Engineer)  (Independent     (On-call)
+                        Platform +          Engineering)                    tests + review)
+                        Software)
 ```
 
 ## The thread
@@ -21,7 +21,7 @@ If the criteria are weak, all three are weak. Investment in stages 1 to 3 pays b
 
 | After | Gate | Decided by |
 |---|---|---|
-| Stage 1 | Brief is a problem statement | Product and engineering leads |
+| Stage 1 | Brief is an opportunity statement, ready for the workshop | Product manager, after the brief-coach's independent review |
 | Stage 2 | Design note accepted | Engineering, with product confirming |
 | Stage 3 | Breakdown, size, scope | Engineering and product |
 | Stage 4 | Pull request opened | Owning engineer |

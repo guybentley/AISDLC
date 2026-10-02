@@ -1,8 +1,8 @@
 # Stage 4: Build
 
-**Human owner:** The engineer who owns the pull request
-**Agents:** a coding agent of your choice
-**Output:** a pull request
+- **Human owner:** The engineer who owns the pull request
+- **Agents:** a coding agent of your choice
+- **Output:** a pull request
 
 ## Purpose
 

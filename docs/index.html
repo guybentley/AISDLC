@@ -31,7 +31,6 @@
   --accent: #6cc4d6; --accent-soft: #1b3038; --code-bg: #232c31; color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
 a { color: var(--accent); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -93,10 +92,10 @@ tr:last-child td { border-bottom: 0; }
     <button class="menu-btn" id="menu" aria-expanded="false" aria-controls="groups">Contents</button>
     <div class="groups" id="groups">
 <div class="group"><h2>Overview</h2><ul><li><a href="#readme" data-nav="readme">AI SDLC</a></li><li><a href="#docs-principles" data-nav="docs-principles">Principles</a></li><li><a href="#docs-lifecycle" data-nav="docs-lifecycle">Lifecycle overview</a></li></ul></div>
-<div class="group"><h2>Stages</h2><ul><li><a href="#docs-stages-01-problem-brief" data-nav="docs-stages-01-problem-brief">1. Problem brief</a></li><li><a href="#docs-stages-02-design-workshop" data-nav="docs-stages-02-design-workshop">2. Design workshop</a></li><li><a href="#docs-stages-03-stories-and-sizing" data-nav="docs-stages-03-stories-and-sizing">3. Stories and sizing</a></li><li><a href="#docs-stages-04-build" data-nav="docs-stages-04-build">4. Build</a></li><li><a href="#docs-stages-05-verification" data-nav="docs-stages-05-verification">5. Verification</a></li><li><a href="#docs-stages-06-release" data-nav="docs-stages-06-release">6. Release</a></li></ul></div>
+<div class="group"><h2>Stages</h2><ul><li><a href="#docs-stages-01-opportunity-brief" data-nav="docs-stages-01-opportunity-brief">1. Opportunity brief</a></li><li><a href="#docs-stages-02-design-workshop" data-nav="docs-stages-02-design-workshop">2. Design workshop</a></li><li><a href="#docs-stages-03-stories-and-sizing" data-nav="docs-stages-03-stories-and-sizing">3. Stories and sizing</a></li><li><a href="#docs-stages-04-build" data-nav="docs-stages-04-build">4. Build</a></li><li><a href="#docs-stages-05-verification" data-nav="docs-stages-05-verification">5. Verification</a></li><li><a href="#docs-stages-06-release" data-nav="docs-stages-06-release">6. Release</a></li></ul></div>
 <div class="group"><h2>Agents</h2><ul><li><a href="#agents-brief-coach" data-nav="agents-brief-coach">brief-coach</a></li><li><a href="#agents-workshop-context-pack" data-nav="agents-workshop-context-pack">workshop-context-pack</a></li><li><a href="#agents-workshop-scribe" data-nav="agents-workshop-scribe">workshop-scribe</a></li><li><a href="#agents-workshop-challenger" data-nav="agents-workshop-challenger">workshop-challenger</a></li><li><a href="#agents-design-note-writer" data-nav="agents-design-note-writer">design-note-writer</a></li><li><a href="#agents-story-writer" data-nav="agents-story-writer">story-writer</a></li><li><a href="#agents-right-size-checker" data-nav="agents-right-size-checker">right-size-checker</a></li><li><a href="#agents-test-author" data-nav="agents-test-author">test-author</a></li><li><a href="#agents-adversarial-reviewer" data-nav="agents-adversarial-reviewer">adversarial-reviewer</a></li><li><a href="#agents-release-verifier" data-nav="agents-release-verifier">release-verifier</a></li><li><a href="#agents--template" data-nav="agents--template">&lt;agent-name&gt;</a></li></ul></div>
 <div class="group"><h2>Running it</h2><ul><li><a href="#docs-adoption" data-nav="docs-adoption">Adoption</a></li><li><a href="#docs-metrics" data-nav="docs-metrics">Metrics</a></li></ul></div>
-<div class="group"><h2>Templates</h2><ul><li><a href="#templates-problem-brief" data-nav="templates-problem-brief">Problem brief: &lt;title&gt;</a></li><li><a href="#templates-story-map" data-nav="templates-story-map">Story map: &lt;title&gt;</a></li><li><a href="#templates-domain-context" data-nav="templates-domain-context">Domain context: &lt;industry or product space&gt;</a></li></ul></div>
+<div class="group"><h2>Templates</h2><ul><li><a href="#templates-opportunity-brief" data-nav="templates-opportunity-brief">Opportunity brief: &lt;title&gt;</a></li><li><a href="#templates-story-map" data-nav="templates-story-map">Story map: &lt;title&gt;</a></li><li><a href="#templates-domain-context" data-nav="templates-domain-context">Domain context: &lt;industry or product space&gt;</a></li></ul></div>
     </div>
   </nav>
   <main id="main">
@@ -105,178 +104,190 @@ tr:last-child td { border-bottom: 0; }
 <h1>AI SDLC</h1>
 <p>An open framework for running a software delivery lifecycle as a partnership: engineers and AI agents work as a pair, agents bring speed, and engineers bring judgment and accountability.</p>
 <blockquote><strong>Status:</strong> early draft. Structure and agent specs are being written in the open. Expect change.</blockquote>
-<h2>The idea</h2>
+<h2 id="readme--the-idea">The idea</h2>
 <p>AI enhances the speed of writing code. That moves the constraint to two places:</p>
-<ol><li><strong>Specifying what to build</strong> - a clear problem, a shared design, testable acceptance criteria.</li><li><strong>Verifying what was built</strong> - independent tests, adversarial review, safe release.</li></ol>
-<p>This framework rebalances the lifecycle around those two ends. It is not a coding-assistant rollout; it is a way of working, in which the engineer and the agent do each stage together and the engineer decides.</p>
-<h2>The lifecycle</h2>
-<div class="tablewrap"><table><thead><tr><th>#</th><th>Stage</th><th>Human owns</th><th>Agents help with</th></tr></thead><tbody><tr><td>1</td><td><a href="#docs-stages-01-problem-brief">Problem brief</a></td><td>Customer problem, outcomes, constraints</td><td>Stripping solution detail, finding gaps</td></tr><tr><td>2</td><td><a href="#docs-stages-02-design-workshop">Design workshop</a></td><td>The design, decisions, trade-offs</td><td>Context, scribing, challenge, stack checks</td></tr><tr><td>3</td><td><a href="#docs-stages-03-stories-and-sizing">Stories and sizing</a></td><td>Scope and priority</td><td>Story writing, acceptance criteria, size checks</td></tr><tr><td>4</td><td><a href="#docs-stages-04-build">Build</a></td><td>The pull request</td><td>Implementation</td></tr><tr><td>5</td><td><a href="#docs-stages-05-verification">Verification</a></td><td>Merge decision</td><td>Independent tests, adversarial review</td></tr><tr><td>6</td><td><a href="#docs-stages-06-release">Release</a></td><td>Go / rollback decisions</td><td>Plan summaries, post-deploy checks</td></tr></tbody></table></div>
+<ol><li><strong>Specifying what to build</strong> - a clear customer opportunity, a shared design, testable acceptance criteria.</li><li><strong>Verifying what was built</strong> - independent tests, adversarial review, safe release.</li></ol>
+<p>This framework rebalances the lifecycle around those two ends. It is not a coding-assistant rollout; it is a way of working, in which people and agents do each stage together and the accountable person decides.</p>
+<h2 id="readme--the-lifecycle">The lifecycle</h2>
+<div class="tablewrap"><table><thead><tr><th>#</th><th>Stage</th><th>Human owns</th><th>Agents help with</th></tr></thead><tbody><tr><td>1</td><td><a href="#docs-stages-01-opportunity-brief">Opportunity brief</a></td><td>Customer opportunity, outcomes, constraints</td><td>Stripping solution detail, finding gaps</td></tr><tr><td>2</td><td><a href="#docs-stages-02-design-workshop">Design workshop</a></td><td>The design, decisions, trade-offs</td><td>Context, scribing, challenge, stack checks</td></tr><tr><td>3</td><td><a href="#docs-stages-03-stories-and-sizing">Stories and sizing</a></td><td>Scope and priority</td><td>Story writing, acceptance criteria, size checks</td></tr><tr><td>4</td><td><a href="#docs-stages-04-build">Build</a></td><td>The pull request</td><td>Implementation</td></tr><tr><td>5</td><td><a href="#docs-stages-05-verification">Verification</a></td><td>Merge decision</td><td>Independent tests, adversarial review</td></tr><tr><td>6</td><td><a href="#docs-stages-06-release">Release</a></td><td>Go / rollback decisions</td><td>Plan summaries, post-deploy checks</td></tr></tbody></table></div>
 <p>Acceptance criteria written at stage 3 are the thread: the test author, the reviewer and the release verifier all read them.</p>
-<h2>Repository layout</h2>
-<ul><li><a href="#docs-principles"><code>docs/</code></a> - principles, lifecycle, one page per stage, adoption and metrics</li><li><a href="#agents-brief-coach"><code>agents/</code></a> - one spec per agent: purpose, inputs, outputs, human gate, draft prompt, failure modes</li><li><a href="#templates-problem-brief"><code>templates/</code></a> - artefacts the process produces, such as the problem brief</li></ul>
-<h2>Principles</h2>
-<p>Read <a href="#docs-principles">docs/principles.md</a> first. In short: humans stay accountable at defined gates; the author never is the only tester; specs are the primary artefact; measure before and after.</p>
-<h2>Contributing</h2>
+<h2 id="readme--repository-layout">Repository layout</h2>
+<ul><li><a href="#docs-principles"><code>docs/</code></a> - principles, lifecycle, one page per stage, adoption and metrics</li><li><a href="#agents-brief-coach"><code>agents/</code></a> - one spec per agent: purpose, inputs, outputs, human gate, draft prompt, failure modes</li><li><a href="#templates-opportunity-brief"><code>templates/</code></a> - artefacts the process produces, such as the opportunity brief</li></ul>
+<h2 id="readme--principles">Principles</h2>
+<p>Read <a href="#docs-principles">docs/principles.md</a> first. In short: people and agents work as a pair and swap roles; the opportunity, the design and the acceptance criteria come first; verification is independent from creation; people hold defined gates; a squad owns the solution; and context lives where agents can read it, with an owner.</p>
+<h2 id="readme--contributing">Contributing</h2>
 <p>Agent specs are deliberately tool-agnostic. If you adapt one to a specific tool, add it under the agent's folder rather than changing the generic spec.</p>
 </section>
 <section class="doc" id="docs-principles" data-file="docs/principles.md">
 <p class="path">docs/principles.md</p>
 <h1>Principles</h1>
-<ol><li><strong>People and agents work as a pair, and swap roles.</strong> The agent brings speed and breadth; the person brings context, judgment and accountability. Neither works alone at any stage. Every so often the person does the work, for example writing the code, and the agent reviews it. That keeps the person's skills sharp, and the agent records the squad's style in its context from what the person produces.</li><li><strong>The problem, the design and the acceptance criteria come first.</strong> An agent's output is only as good as the problem statement, shared design, acceptance criteria and business context it is given. Effort here is cheaper than effort spent fixing the solution. As with traditional SDLCs, breaking down the requirements into the smallest possible iterations allows predictable delivery and faster flow to production.</li><li><strong>Verification is independent from creation.</strong> Agents produce work faster, so checking has to keep up. Whoever or whatever made the work is never the only one to test it, and a second model or person reviews it with the aim of finding how it fails. Security and quality are checked throughout the flow, not at the end, by human and agent pairs or by agentic tools, with independent and human-led verification on top, such as regular human-led penetration testing. Checks are automated so they are repeatable, and security testing stays within an agreed scope and only against systems you own.</li><li><strong>People hold defined gates.</strong> Spec approval, design decisions, merge and release are decided by people. Agents advise, and the accountable person decides.</li><li><strong>A squad owns the solution.</strong> A squad is a small cross-functional team, with product, engineering and platform in it. The squad owns the problem and the solution together, and designs it jointly, in the room. Product brings the customer, the outcome and the real limits on scale, cost and time; engineering brings what is feasible and what it costs to build and run. Together they keep the design proportionate, neither over-built nor under-built. No single role designs it alone.</li><li><strong>Context lives where agents can read it, and someone owns it.</strong> Conventions, architecture decisions, standards and knowledge of the business live in places agents can read, such as the repository, a shared domain context, or the brief. Each has an owner who keeps it current, because an agent working from stale context produces confident wrong answers.</li></ol>
+<ol><li><strong>People and agents work as a pair, and swap roles.</strong> The agent brings speed and breadth; the person brings context, judgment and accountability. Neither works alone at any stage. Every so often the person does the work, for example writing the code, and the agent reviews it. That keeps the person's skills sharp, and the agent records the squad's style in its context from what the person produces.</li><li><strong>The opportunity, the design and the acceptance criteria come first.</strong> An agent's output is only as good as the opportunity statement, shared design, acceptance criteria and business context it is given. Effort here is cheaper than effort spent fixing the solution. As with traditional SDLCs, breaking down the requirements into the smallest possible iterations allows predictable delivery and faster flow to production.</li><li><strong>Verification is independent from creation.</strong> Agents produce work faster, so checking has to keep up. Whoever or whatever made the work is never the only one to test it, and a second model or person reviews it with the aim of finding how it fails. Security and quality are checked throughout the flow, not at the end, by human and agent pairs or by agentic tools, with independent and human-led verification on top, such as regular human-led penetration testing. Checks are automated so they are repeatable, and security testing stays within an agreed scope and only against systems you own.</li><li><strong>People hold defined gates.</strong> Spec approval, design decisions, merge and release are decided by people. Agents advise, and the accountable person decides.</li><li><strong>A squad owns the solution.</strong> A squad is a small cross-functional team, with product, engineering and platform in it. The squad owns the opportunity and the solution together, and designs it jointly, in the room. Product brings the customer, the outcome and the real limits on scale, cost and time; engineering brings what is feasible and what it costs to build and run. Together they keep the design proportionate, neither over-built nor under-built. No single role designs it alone.</li><li><strong>Context lives where agents can read it, and someone owns it.</strong> Conventions, architecture decisions, standards and knowledge of the business live in places agents can read, such as the repository, a shared domain context, or the brief. Each has an owner who keeps it current, because an agent working from stale context produces confident wrong answers.</li></ol>
 </section>
 <section class="doc" id="docs-lifecycle" data-file="docs/lifecycle.md">
 <p class="path">docs/lifecycle.md</p>
 <h1>Lifecycle overview</h1>
-<pre><code>Problem brief -&gt; Design workshop -&gt; Stories &amp; sizing -&gt; Build -&gt; Verification -&gt; Release
-   (Product)       (Product +          (Product +         (Engineer)  (Independent     (On-call)
-                    Platform +          Engineering)                    tests + review)
-                    Software)</code></pre>
-<h2>The thread</h2>
+<pre><code>Opportunity brief -&gt; Design workshop -&gt; Stories &amp; sizing -&gt; Build -&gt; Verification -&gt; Release
+   (Product)           (Product +          (Product +         (Engineer)  (Independent     (On-call)
+                        Platform +          Engineering)                    tests + review)
+                        Software)</code></pre>
+<h2 id="docs-lifecycle--the-thread">The thread</h2>
 <p>Acceptance criteria written in stage 3 are read by:</p>
 <ul><li>the <strong>test author</strong> (stage 5), to write independent tests</li><li>the <strong>adversarial reviewer</strong> (stage 5), to judge the change against the spec</li><li>the <strong>release verifier</strong> (stage 6), to build post-deploy checks</li></ul>
 <p>If the criteria are weak, all three are weak. Investment in stages 1 to 3 pays back at the end.</p>
-<h2>Human gates</h2>
-<div class="tablewrap"><table><thead><tr><th>After</th><th>Gate</th><th>Decided by</th></tr></thead><tbody><tr><td>Stage 1</td><td>Brief is a problem statement</td><td>Product and engineering leads</td></tr><tr><td>Stage 2</td><td>Design note accepted</td><td>Engineering, with product confirming</td></tr><tr><td>Stage 3</td><td>Breakdown, size, scope</td><td>Engineering and product</td></tr><tr><td>Stage 4</td><td>Pull request opened</td><td>Owning engineer</td></tr><tr><td>Stage 5</td><td>Merge</td><td>Reviewer with merge authority</td></tr><tr><td>Stage 6</td><td>Go / no-go on ambiguous signals</td><td>Release owner</td></tr></tbody></table></div>
+<h2 id="docs-lifecycle--human-gates">Human gates</h2>
+<div class="tablewrap"><table><thead><tr><th>After</th><th>Gate</th><th>Decided by</th></tr></thead><tbody><tr><td>Stage 1</td><td>Brief is an opportunity statement, ready for the workshop</td><td>Product manager, after the brief-coach's independent review</td></tr><tr><td>Stage 2</td><td>Design note accepted</td><td>Engineering, with product confirming</td></tr><tr><td>Stage 3</td><td>Breakdown, size, scope</td><td>Engineering and product</td></tr><tr><td>Stage 4</td><td>Pull request opened</td><td>Owning engineer</td></tr><tr><td>Stage 5</td><td>Merge</td><td>Reviewer with merge authority</td></tr><tr><td>Stage 6</td><td>Go / no-go on ambiguous signals</td><td>Release owner</td></tr></tbody></table></div>
 </section>
-<section class="doc" id="docs-stages-01-problem-brief" data-file="docs/stages/01-problem-brief.md">
-<p class="path">docs/stages/01-problem-brief.md</p>
-<h1>Stage 1: Problem brief</h1>
-<p><strong>Human owner:</strong> Product <strong>Agents:</strong> <a href="#agents-brief-coach">brief-coach</a> <strong>Output:</strong> a completed <a href="#templates-problem-brief">problem brief</a> and an empty <a href="#templates-story-map">story map</a> for the team</p>
-<h2>Purpose</h2>
-<p>Capture the customer problem, the outcome that matters, and the constraints - without prescribing a solution.</p>
-<h2>Goal</h2>
-<p>Work out what problem the customer actually has. Gathering information for the brief is an investigation, not a specification exercise: the output is an evidence-backed statement of the customer's problem, and nothing about how to solve it.</p>
-<h2>Finding the problem</h2>
-<p>The problem can be established in several ways. Use whichever fit, and combine them where you can, because each answers a different question.</p>
-<div class="tablewrap"><table><thead><tr><th>Method</th><th>Example</th><th>What it tells you</th></tr></thead><tbody><tr><td><strong>Measure failure in the current system</strong></td><td>Percentage of customers who drop out before completing a process</td><td>Where and how often things go wrong, and how big the problem is</td></tr><tr><td><strong>Customer surveys</strong></td><td>A short survey to a sample of users about a task or process</td><td>How widespread a perception is, across many customers</td></tr><tr><td><strong>Customer interviews</strong></td><td>Conversations with customers about what they were trying to do and what got in the way</td><td>Why it goes wrong, in the customer's own words</td></tr></tbody></table></div>
-<p>Measurement shows where the problem is, interviews explain why, and surveys show how many people share it. A brief built on one method alone should say so, and record what the other methods would add.</p>
-<h2>Writing it clearly</h2>
-<p>Describe the problem so that anyone in your industry could read it and understand it, with no knowledge of your company, your systems or your team.</p>
-<ul><li>Use plain words and the customer's own terms.</li><li>Avoid internal jargon, product code names and acronyms. If you need a term, define it once.</li><li>State the problem as something that happens to the customer, not as something missing from your system.</li><li>Prefer a specific statement with a number to a general one.</li></ul>
-<p>A good test: give the problem statement to someone from another company in your industry. If they can explain it back to you, it is clear enough.</p>
-<h2>Defining success</h2>
-<p>Every brief defines how success will be measured, and measures where things stand today, before any work starts. Without that starting point there is nothing to compare against.</p>
-<p>For example, if the aim is to improve customer onboarding:</p>
-<ol><li>Measure the current drop-out rate, meaning the percentage of customers who start onboarding and do not finish it. This is the baseline.</li><li>Set a target for improvement.</li><li>Try different ways of improving onboarding, and measure each one against the baseline and against each other. A/B testing, where different groups of customers get different versions at the same time, is a good way to do this.</li><li>Keep what works.</li></ol>
-<p>The brief records the measure, the baseline and the target. It does not choose the approach. Trying and comparing approaches is what the later stages do, so the brief should leave room for more than one.</p>
-<p>Where there are too few customers for a fair A/B test, compare results before and after the change against the baseline instead.</p>
-<h2>Unhappy paths</h2>
+<section class="doc" id="docs-stages-01-opportunity-brief" data-file="docs/stages/01-opportunity-brief.md">
+<p class="path">docs/stages/01-opportunity-brief.md</p>
+<h1>Stage 1: Opportunity brief</h1>
+<ul><li><strong>Human owner:</strong> The product manager</li><li><strong>Agents:</strong> <a href="#agents-brief-coach">brief-coach</a></li><li><strong>Output:</strong> a completed <a href="#templates-opportunity-brief">opportunity brief</a> and a basic <a href="#templates-story-map">story map</a> of the customer need, from starting state to completed opportunity</li></ul>
+<h2 id="docs-stages-01-opportunity-brief--purpose">Purpose</h2>
+<p>Capture the customer opportunity, the outcome that matters, and the constraints - without prescribing a solution. An opportunity does not have to be a problem to solve. It can be a pure benefit the customer would value.</p>
+<h2 id="docs-stages-01-opportunity-brief--goal">Goal</h2>
+<p>Work out what the customer actually needs or would value. The opportunity may be a problem to solve, such as customers dropping out of a process, or a pure benefit, such as a capability they would use and value. Gathering information for the brief is an investigation, not a specification exercise: the output is an evidence-backed statement of the customer's opportunity, and nothing about how to deliver it.</p>
+<h2 id="docs-stages-01-opportunity-brief--finding-the-opportunity">Finding the opportunity</h2>
+<p>The opportunity can be established in several ways. Use whichever fit, and combine them where you can, because each answers a different question.</p>
+<div class="tablewrap"><table><thead><tr><th>Method</th><th>Example</th><th>What it tells you</th></tr></thead><tbody><tr><td><strong>Measure the current system</strong></td><td>For a problem: the percentage of customers who drop out before completing a process. For a benefit: how many customers already use a workaround, or ask for the capability</td><td>Where and how often it happens, and how big the opportunity is</td></tr><tr><td><strong>Customer surveys</strong></td><td>A short survey to a sample of users about a task or process</td><td>How widespread a perception is, across many customers</td></tr><tr><td><strong>Customer interviews</strong></td><td>Conversations with customers about what they were trying to do and what got in the way</td><td>Why it goes wrong, in the customer's own words</td></tr></tbody></table></div>
+<p>Measurement shows where the opportunity is, interviews explain why it matters, and surveys show how many people share it. A brief built on one method alone should say so, and record what the other methods would add.</p>
+<h2 id="docs-stages-01-opportunity-brief--writing-it-clearly">Writing it clearly</h2>
+<p>Describe the opportunity so that anyone in your industry could read it and understand it, with no knowledge of your company, your systems or your team.</p>
+<ul><li>Use plain words and the customer's own terms.</li><li>Avoid internal jargon, product code names and acronyms. If you need a term, define it once.</li><li>State the opportunity as something that happens to the customer, or something they would gain, not as something missing from your system.</li><li>Prefer a specific statement with a number to a general one.</li></ul>
+<p>A good test: give the opportunity statement to someone from another company in your industry. If they can explain it back to you, it is clear enough.</p>
+<h2 id="docs-stages-01-opportunity-brief--defining-success">Defining success</h2>
+<p>Every brief defines how success will be measured. Where something already exists, it also records where things stand today, before any work starts. That is the baseline, and without it there is nothing to compare against.</p>
+<p>For example, if the opportunity is to improve customer onboarding:</p>
+<ol><li>Choose the measure: the drop-out rate, meaning the percentage of customers who start onboarding and do not finish it.</li><li>Measure where it stands today. This is the baseline.</li><li>Set a target.</li></ol>
+<p>Sometimes there is no baseline, because the opportunity is new or breaks new ground. Then say so in the brief, and say how a baseline will be established. For example, measure the first release, or use a comparable product or a market figure as a reference. Treat the target as a first estimate, to be revisited when real data arrives.</p>
+<p>The same applies to a benefit. Choose a measure of what the customer gains, such as the share of customers who use a new capability, or the time they save on a task. Record today's position and set a target.</p>
+<p>The brief records the measure, the baseline where there is one, and the target. It does not say how to reach the target. That is for the squad to work out in later stages.</p>
+<h2 id="docs-stages-01-opportunity-brief--scale">Scale</h2>
+<p>Say how big the opportunity is, so the squad can design something proportionate, neither over-built nor under-built. If the existing system already gives the figures, say where they come from. If it does not, give your best estimate and say it is an estimate.</p>
+<p>Useful figures include:</p>
+<ul><li>the number of customers or users</li><li>the number of transactions or requests per day, and when they peak</li><li>how fast that is likely to grow</li><li>the amount of data involved</li></ul>
+<p>A range is more honest than a single number, and an estimate with its basis is better than a blank. The brief gives the scale, not the capacity or technology to handle it. That is a design decision for the squad.</p>
+<h2 id="docs-stages-01-opportunity-brief--unhappy-paths">Unhappy paths</h2>
 <p>A brief describes what happens when things go wrong, not only when they go right. Most problems customers remember happen on the unhappy path, and it is the part most often left until late in delivery, when it is expensive to add.</p>
+<p>A benefit can go wrong too: the customer cannot get it, or it does not work as promised.</p>
 <p>Take customer onboarding. It is easy to describe the customer who signs up and is approved. Also describe the one whose identity check (KYC, "know your customer") fails. Ask:</p>
 <ul><li><strong>What does the customer see and understand?</strong> Do they know what happened, in plain language, and what they can do next?</li><li><strong>Is it a dead end?</strong> A failed check should lead somewhere, such as retrying, supplying different evidence or speaking to a person, and should never simply end the journey.</li><li><strong>Can they challenge it?</strong> Where an automated process makes a decision about a customer, there must be a route to a person who can review it and overturn it. The customer must be able to find that route.</li><li><strong>Who picks it up, and how quickly?</strong> Name the role that handles escalations and the time the customer can expect to wait.</li><li><strong>What do we learn from it?</strong> Track how many failures there are, how many are challenged, how many are overturned and how long they take. A high overturn rate shows the automated process is wrongly turning customers away, which is a problem in its own right.</li></ul>
 <p>Rules about automated decisions and customer rights differ between countries and industries. Record the ones that apply as constraints, and check them with your legal or compliance function.</p>
-<p>The unhappy paths in the brief feed the rest of the lifecycle. They are worked through in the design workshop, become stories with their own acceptance criteria, and are tested by the independent <a href="#agents-test-author">test author</a>.</p>
-<h2>Customer workflows</h2>
+<p>The unhappy paths in the brief feed the rest of the lifecycle. They are worked through in the design workshop, may become stories with their own acceptance criteria, and are tested by the independent <a href="#agents-test-author">test author</a>.</p>
+<h2 id="docs-stages-01-opportunity-brief--customer-workflows">Customer workflows</h2>
 <p>The brief includes basic workflows showing how a customer transacts: the steps they take, what they see, and what happens when something goes wrong. The product manager drafts them with the <a href="#agents-brief-coach">brief-coach</a>, which asks about each step and draws the result.</p>
 <p>Workflows stay at the customer level. They say what the customer does and experiences, not which systems are involved. They are checked with real customers or the people who support them where possible, and the design workshop then refines them into the story map.</p>
-<h2>The empty story map</h2>
-<p>The goal of the product manager and the agent together is a brief the team can act on, and an <strong>empty story map</strong> for the team to work through in the design workshop.</p>
-<p>They prepare the backbone of the map from the customer workflows: the activities the customer performs, the steps within each, and the points where things can go wrong. Everything else is left empty on purpose: the stories, the release slices and the annotations. The team fills those in together, so the design comes from the room and not from the brief.</p>
+<h2 id="docs-stages-01-opportunity-brief--a-basic-story-map-of-the-customer-need">A basic story map of the customer need</h2>
+<p>The goal of the product manager and the agent together is a brief the squad can act on, and a <strong>basic story map of the customer need</strong> for the squad to work through in the design workshop.</p>
+<p>The map has a <strong>starting state</strong>, where the customer is when their need arises or they first reach out, and a <strong>completed opportunity</strong>, where the opportunity has been realised for them. Between them it holds the main steps the customer takes, in the customer's terms, drawn from the customer workflows, and it marks the points where things can go wrong. The completed opportunity matches the outcome in the brief.</p>
+<p>Everything else is left blank on purpose: the stories, the release slices and the annotations. The squad fills those in together, so the design comes from the room and not from the brief.</p>
 <p>Use whichever tool your team works in. Whiteboard tools such as Miro or a Confluence whiteboard suit this well, and the framework also provides a text version. The rows matter more than the tool.</p>
 <p>The backbone is a draft. The team can rename, reorder, add or remove anything on it.</p>
-<h2>What a good brief contains</h2>
-<ul><li>Who the customer is and what they are trying to do</li><li>The problem, in plain language, with evidence from the methods above</li><li>The outcome that would show it is solved, with a measure, today's baseline and a target</li><li>Basic customer workflows, from start to finish, in the customer's terms</li><li>What happens when things go wrong: the unhappy paths, including how a customer challenges an automated decision</li><li>Constraints: cost, time, compliance, performance, dependencies</li><li>What is explicitly out of scope</li><li>Open questions</li></ul>
-<h2>What it must not contain</h2>
-<p>Architecture, API design, technology choices or "an agent that does X". These are design decisions for <a href="#docs-stages-02-design-workshop">stage 2</a>. Suggestions are welcome but belong in a clearly labelled section, as input, not specification.</p>
-<h2>Why this stage exists</h2>
-<p>AI makes it trivial for anyone to produce a plausible architecture from a long document. Without the stack context, that architecture is usually wrong for the organisation and gets ignored, so effort is wasted and the actual problem is left vague.</p>
-<h2>Human gate</h2>
-<p>The product lead and the engineering lead agree the brief is a problem statement and is ready for a workshop.</p>
-<h2>Anti-patterns</h2>
-<ul><li>The brief is a solution spec in disguise</li><li>Outcomes without a measure, or a measure without a baseline</li><li>Only the happy path described, so failures and rejections are discovered in build or in production</li><li>An automated decision about a customer with no way for them to challenge it</li><li>A problem statement full of internal jargon that outsiders could not follow</li><li>Constraints discovered only in the design workshop</li></ul>
+<h2 id="docs-stages-01-opportunity-brief--what-a-good-brief-contains">What a good brief contains</h2>
+<ul><li>Who the customer is and what they are trying to do</li><li>The opportunity, in plain language, with evidence from the methods above: the problem to solve or the benefit to deliver</li><li>The outcome that would show it is solved, with a measure, a baseline where one exists, and a target</li><li>The scale of the opportunity: customers, transactions per day, peaks and growth, known or estimated</li><li>Basic customer workflows, from start to finish, in the customer's terms</li><li>What happens when things go wrong: the unhappy paths, including how a customer challenges an automated decision</li><li>Constraints: cost, time, compliance, performance, dependencies</li><li>What is explicitly out of scope</li><li>Open questions</li></ul>
+<h2 id="docs-stages-01-opportunity-brief--what-is-left-for-the-design-workshop">What is left for the design workshop</h2>
+<p>Architecture, API design, technology choices and ideas such as "an agent that does X" are design decisions, and they belong to <a href="#docs-stages-02-design-workshop">stage 2</a>. That is where the squad (product, engineering, platform and any other relevant party) comes together. Solving the opportunity is part of the design workshop, with everyone in the room.</p>
+<p>If you already have ideas about how to deliver it, they are welcome. Put them in the Suggestions section of the brief, as input for the squad to consider, not as requirements.</p>
+<h2 id="docs-stages-01-opportunity-brief--why-this-stage-exists">Why this stage exists</h2>
+<p>AI makes it easy for anyone to produce a plausible architecture from a long document. Without knowing what the organisation already runs on, such as its existing systems, cloud platform and tools, that architecture can miss what is already there, and can miss better options such as buying a ready-made product. Choosing between them is a decision for the squad together, so the best way to meet the need is chosen. This stage keeps the focus on the opportunity, and leaves the design to the squad.</p>
+<h2 id="docs-stages-01-opportunity-brief--human-gate">Human gate</h2>
+<p>The product manager accepts the brief once the brief-coach has reviewed it and the product manager is satisfied it is an opportunity statement that is ready for the design workshop. The agent's review is the independent check, so no separate human review is needed at this stage. The squad can still raise questions about the brief when the workshop begins.</p>
+<h2 id="docs-stages-01-opportunity-brief--anti-patterns">Anti-patterns</h2>
+<ul><li>The brief is a solution spec in disguise</li><li>Outcomes without a measure</li><li>No baseline, and no word on why there is none or how one will be established</li><li>No sense of scale, so the design ends up over-built or under-built</li><li>Only the happy path described, so failures and rejections are discovered in build or in production</li><li>An automated decision about a customer with no way for them to challenge it</li><li>An opportunity statement full of internal jargon that outsiders could not follow</li><li>Treating every opportunity as a problem, so benefits the customer would value are never captured</li><li>Known business constraints (budget, deadlines, compliance) left out of the brief</li></ul>
 </section>
 <section class="doc" id="docs-stages-02-design-workshop" data-file="docs/stages/02-design-workshop.md">
 <p class="path">docs/stages/02-design-workshop.md</p>
 <h1>Stage 2: Design workshop</h1>
-<p><strong>Human owners:</strong> Product (problem), Platform and Software engineering (design) <strong>Agents:</strong> <a href="#agents-workshop-context-pack">workshop-context-pack</a>, <a href="#agents-workshop-scribe">workshop-scribe</a>, <a href="#agents-workshop-challenger">workshop-challenger</a>, <a href="#agents-design-note-writer">design-note-writer</a> <strong>Output:</strong> a story map and a design note committed to the repository</p>
-<h2>Purpose</h2>
+<ul><li><strong>Human owners:</strong> Product (opportunity), Platform and Software engineering (design)</li><li><strong>Agents:</strong> <a href="#agents-workshop-context-pack">workshop-context-pack</a>, <a href="#agents-workshop-scribe">workshop-scribe</a>, <a href="#agents-workshop-challenger">workshop-challenger</a>, <a href="#agents-design-note-writer">design-note-writer</a></li><li><strong>Output:</strong> a story map and a design note committed to the repository</li></ul>
+<h2 id="docs-stages-02-design-workshop--purpose">Purpose</h2>
 <p>Design the solution live, with product, platform and software in the room, using story mapping. Doing this before stories are written means the stories come from a shared design instead of a document.</p>
-<h2>Format</h2>
-<p>The workshop starts from the empty <a href="#templates-story-map">story map</a> prepared in <a href="#docs-stages-01-problem-brief">stage 1</a>.</p>
+<h2 id="docs-stages-02-design-workshop--format">Format</h2>
+<p>The workshop starts from the basic <a href="#templates-story-map">story map</a> of the customer need prepared in <a href="#docs-stages-01-opportunity-brief">stage 1</a>.</p>
 <ol><li><strong>Backbone (Product leads):</strong> walk the team through the prepared customer journey, step by step, in plain language. The team challenges it and changes it where it is wrong.</li><li><strong>Ribs:</strong> what the customer does or needs at each step, including the stories for the points where things go wrong.</li><li><strong>Slice:</strong> draw the line for the thinnest end-to-end version that delivers value, then later slices.</li><li><strong>Annotate (Platform and Software):</strong> for each step in the first slice, mark what exists, what is new, what is risky and what is unknown.</li><li><strong>Decide:</strong> record design decisions, reasons and open questions.</li></ol>
-<h2>Where agents help</h2>
+<h2 id="docs-stages-02-design-workshop--build-buy-or-deviate">Build, buy or deviate</h2>
+<p>The existing stack is a starting point, not a rule. Engineering may recommend deviating from it, or buying a ready-made product, when that is the best way to meet the need: the most efficient, the lowest long-term cost, or the quickest.</p>
+<p>This is a decision for the whole squad. Product brings the commercial view of its area, including the profit and loss. Engineering brings feasibility and the cost to build and run. The squad weighs them together and records the decision and the reasons.</p>
+<h2 id="docs-stages-02-design-workshop--where-agents-help">Where agents help</h2>
 <p><strong>Before:</strong> the context pack agent reads the brief and the repositories and produces a one-page sheet of relevant existing services, constraints and open questions. It is not a design.</p>
 <p><strong>During:</strong> three separate jobs.</p>
-<ul><li><em>Scribe:</em> captures the map, decisions and open questions as structured text.</li><li><em>Challenger:</em> asked "what breaks, what is missing, what did we assume?" against the current map.</li><li><em>Stack checker:</em> asked whether a proposed approach fits what exists.</li></ul>
-<p>Keep agent output off the shared screen during steps 1 to 3. A model-drafted journey shown early anchors the room and stops people thinking about the customer. Ask for options only after the problem is agreed, and only when asked.</p>
+<ul><li><em>Scribe:</em> captures the map, decisions and open questions as structured text.</li><li><em>Challenger:</em> asked "what breaks, what is missing, what did we assume?" against the current map.</li><li><em>Stack checker:</em> asked how a proposed approach compares with what exists, and what it would cost to deviate from it.</li></ul>
+<p>Keep agent output off the shared screen during steps 1 to 3. A model-drafted journey shown early anchors the room and stops people thinking about the customer. Ask for options only after the opportunity is agreed, and only when asked.</p>
 <p><strong>After:</strong> the design-note writer produces a short design note in the repository. Engineering reviews it.</p>
-<h2>Human gate</h2>
-<p>Engineering accepts the design note. Product confirms it still solves the problem in the brief.</p>
-<h2>Anti-patterns</h2>
+<h2 id="docs-stages-02-design-workshop--human-gate">Human gate</h2>
+<p>Engineering accepts the design note. Product confirms it still delivers the opportunity in the brief.</p>
+<h2 id="docs-stages-02-design-workshop--anti-patterns">Anti-patterns</h2>
 <ul><li>Agent output shown before the journey is agreed</li><li>Product arrives with a finished architecture</li><li>Design decisions made but not recorded</li></ul>
 </section>
 <section class="doc" id="docs-stages-03-stories-and-sizing" data-file="docs/stages/03-stories-and-sizing.md">
 <p class="path">docs/stages/03-stories-and-sizing.md</p>
 <h1>Stage 3: Stories and sizing</h1>
-<p><strong>Human owners:</strong> Product (scope, priority), Engineering (breakdown, sizing) <strong>Agents:</strong> <a href="#agents-story-writer">story-writer</a>, <a href="#agents-right-size-checker">right-size-checker</a> <strong>Output:</strong> initiatives, epics and stories, each with testable acceptance criteria and a trace to the story map</p>
-<h2>Purpose</h2>
+<ul><li><strong>Human owners:</strong> Product (scope, priority), Engineering (breakdown, sizing)</li><li><strong>Agents:</strong> <a href="#agents-story-writer">story-writer</a>, <a href="#agents-right-size-checker">right-size-checker</a></li><li><strong>Output:</strong> initiatives, epics and stories, each with testable acceptance criteria and a trace to the story map</li></ul>
+<h2 id="docs-stages-03-stories-and-sizing--purpose">Purpose</h2>
 <p>Turn the story map and design note into a roadmap the team can build, without hand-writing tickets.</p>
-<h2>Rules</h2>
+<h2 id="docs-stages-03-stories-and-sizing--rules">Rules</h2>
 <ul><li>Every story traces to a step on the story map.</li><li>Every story has acceptance criteria that can be turned into a test. This is the thread the rest of the lifecycle reads.</li><li>Stories are small enough for one agent session and one reviewable pull request.</li></ul>
-<h2>Sizing</h2>
+<h2 id="docs-stages-03-stories-and-sizing--sizing">Sizing</h2>
 <p>This framework favours <strong>right-sizing</strong> over story points: a story is either small enough to fit the team's agreed cycle-time target or it is split. Forecasting uses throughput (stories finished per period), not point velocity. Right-sizing pairs well with agent-driven work because a story that is small enough to right-size is also small enough to complete in one session.</p>
 <p>The exact rule (target cycle time, how it is set, how splits are decided) should be defined by each team and documented here as the framework matures.</p>
-<h2>Human gate</h2>
+<h2 id="docs-stages-03-stories-and-sizing--human-gate">Human gate</h2>
 <p>Engineering accepts the breakdown and the size. Product confirms scope and priority.</p>
-<h2>Anti-patterns</h2>
+<h2 id="docs-stages-03-stories-and-sizing--anti-patterns">Anti-patterns</h2>
 <ul><li>Acceptance criteria that describe implementation instead of behaviour</li><li>Stories generated from the raw brief rather than the map and design note</li><li>Sizing by point estimates that no one forecasts from</li></ul>
 </section>
 <section class="doc" id="docs-stages-04-build" data-file="docs/stages/04-build.md">
 <p class="path">docs/stages/04-build.md</p>
 <h1>Stage 4: Build</h1>
-<p><strong>Human owner:</strong> The engineer who owns the pull request <strong>Agents:</strong> a coding agent of your choice <strong>Output:</strong> a pull request</p>
-<h2>Purpose</h2>
+<ul><li><strong>Human owner:</strong> The engineer who owns the pull request</li><li><strong>Agents:</strong> a coding agent of your choice</li><li><strong>Output:</strong> a pull request</li></ul>
+<h2 id="docs-stages-04-build--purpose">Purpose</h2>
 <p>An engineer directs a coding agent to implement a right-sized story.</p>
-<h2>Requirements</h2>
+<h2 id="docs-stages-04-build--requirements">Requirements</h2>
 <ul><li><strong>Repository context.</strong> Each repository holds an agent instruction file, architecture decisions and conventions so the agent works from the same standards as the team. Keep shared standards in one file that multiple tools can read.</li><li><strong>Small pull requests.</strong> One story, one reviewable change.</li><li><strong>The engineer owns the result.</strong> "The agent wrote it" is never a defence.</li></ul>
-<h2>Human gate</h2>
+<h2 id="docs-stages-04-build--human-gate">Human gate</h2>
 <p>The engineer opens the pull request only when they would be comfortable defending every line.</p>
-<h2>Anti-patterns</h2>
+<h2 id="docs-stages-04-build--anti-patterns">Anti-patterns</h2>
 <ul><li>Large agent-generated pull requests nobody reads</li><li>Agent instructions that differ between repositories for no reason</li><li>The same agent session writing both code and the only tests</li></ul>
 </section>
 <section class="doc" id="docs-stages-05-verification" data-file="docs/stages/05-verification.md">
 <p class="path">docs/stages/05-verification.md</p>
 <h1>Stage 5: Verification</h1>
-<p><strong>Human owner:</strong> The reviewer with merge authority <strong>Agents:</strong> <a href="#agents-test-author">test-author</a>, <a href="#agents-adversarial-reviewer">adversarial-reviewer</a> <strong>Output:</strong> independent tests, review findings and responses, a merge decision</p>
-<h2>Purpose</h2>
+<ul><li><strong>Human owner:</strong> The reviewer with merge authority</li><li><strong>Agents:</strong> <a href="#agents-test-author">test-author</a>, <a href="#agents-adversarial-reviewer">adversarial-reviewer</a></li><li><strong>Output:</strong> independent tests, review findings and responses, a merge decision</li></ul>
+<h2 id="docs-stages-05-verification--purpose">Purpose</h2>
 <p>Close the gap left when there is no dedicated QA function. Verification is the throughput limit of an AI SDLC, so it gets its own stage.</p>
-<h2>Independent tests</h2>
+<h2 id="docs-stages-05-verification--independent-tests">Independent tests</h2>
 <p>A separate agent session writes acceptance tests from the story's acceptance criteria, without seeing the implementation. If tests and code disagree, either the code or the criteria are wrong, and a human decides which.</p>
 <p>A CI check also flags changed code that no test would fail on if it broke.</p>
-<h2>Adversarial review</h2>
+<h2 id="docs-stages-05-verification--adversarial-review">Adversarial review</h2>
 <p>A different model family from the author reviews the pull request. Its brief is to find how the change fails, not to assess whether it looks reasonable.</p>
 <ol><li>It sees the spec, the acceptance criteria and the diff. It does not see the author's reasoning or summary.</li><li>Each finding must include a concrete failure scenario: inputs or state that lead to a wrong result.</li><li>The author responds to every finding: fixed, or rebutted with evidence.</li><li>Disagreements go to a human after one or two rounds.</li></ol>
 <p>An AI reviewer's approval does not count toward required human approvals.</p>
-<h2>Human gate</h2>
+<h2 id="docs-stages-05-verification--human-gate">Human gate</h2>
 <p>Merge is a human decision.</p>
-<h2>Metrics</h2>
+<h2 id="docs-stages-05-verification--metrics">Metrics</h2>
 <p>Finding acceptance rate, noise rate, unique catches (issues neither the author's tooling nor the human reviewer found), and escaped defects.</p>
-<h2>Anti-patterns</h2>
+<h2 id="docs-stages-05-verification--anti-patterns">Anti-patterns</h2>
 <ul><li>Reviewer sees the author's summary and anchors on it</li><li>Findings without a failure scenario</li><li>Treating the AI reviewer as an approver</li></ul>
 </section>
 <section class="doc" id="docs-stages-06-release" data-file="docs/stages/06-release.md">
 <p class="path">docs/stages/06-release.md</p>
 <h1>Stage 6: Release</h1>
-<p><strong>Human owner:</strong> On-call / release owner <strong>Agents:</strong> <a href="#agents-release-verifier">release-verifier</a> <strong>Output:</strong> a verified release or an automatic rollback</p>
-<h2>Purpose</h2>
+<ul><li><strong>Human owner:</strong> On-call / release owner</li><li><strong>Agents:</strong> <a href="#agents-release-verifier">release-verifier</a></li><li><strong>Output:</strong> a verified release or an automatic rollback</li></ul>
+<h2 id="docs-stages-06-release--purpose">Purpose</h2>
 <p>Releasing frequently is only safe if problems are caught quickly. Move safety checks to after the merge as well as before it.</p>
-<h2>Practices</h2>
+<h2 id="docs-stages-06-release--practices">Practices</h2>
 <ul><li><strong>Infrastructure changes:</strong> deterministic policy checks on every plan, plus an agent summary of what the plan changes and what it risks. Policy checks block; the summary informs.</li><li><strong>Post-deploy checks:</strong> synthetic checks derived from the acceptance criteria run against the live system.</li><li><strong>Automatic rollback:</strong> if checks fail, the deployment is reverted through the same declarative path that deployed it.</li><li><strong>Release notes and incident triage:</strong> agent-drafted, human-reviewed.</li></ul>
-<h2>Human gate</h2>
+<h2 id="docs-stages-06-release--human-gate">Human gate</h2>
 <p>The release owner decides go / no-go on ambiguous signals. Rollback on clear failure is automatic.</p>
-<h2>Anti-patterns</h2>
+<h2 id="docs-stages-06-release--anti-patterns">Anti-patterns</h2>
 <ul><li>Agent summaries used as the only infrastructure gate</li><li>Post-deploy checks that do not trace to acceptance criteria</li></ul>
 </section>
 <section class="doc" id="agents-brief-coach" data-file="agents/brief-coach.md">
 <p class="path">agents/brief-coach.md</p>
 <h1>brief-coach</h1>
-<p><strong>Stage:</strong> 1 - Problem brief <strong>Status:</strong> draft</p>
-<h2>Purpose</h2>
-<p>A partner to the product manager while they write the problem brief. The product manager owns the brief and the agent reviews it with them, section by section, raising questions and suggesting changes. It never writes the brief on its own.</p>
-<h2>The checks</h2>
-<p>The agent works through the brief in this order. Only the first check is specified in full so far. It also helps draft <a href="#drafting-customer-workflows">customer workflows</a> and prepares the <a href="#preparing-the-empty-story-map">empty story map</a>.</p>
-<ol><li><strong>Language</strong> - is the problem written clearly, in terms the industry understands? (below)</li><li><strong>Evidence</strong> - is the problem backed by measurement, surveys or interviews? See <a href="#docs-stages-01-problem-brief">stage 1</a>.</li><li><strong>Success measure</strong> - is there a measure, a baseline and a target? See <a href="#docs-stages-01-problem-brief">defining success</a>.</li><li><strong>Unhappy paths</strong> - what happens when things go wrong, and can the customer challenge an automated decision? See <a href="#docs-stages-01-problem-brief">unhappy paths</a>.</li><li><strong>Solution content</strong> - is there architecture or technology in the brief that belongs in the design workshop? If so, move it to the Suggestions section, unchanged and labelled non-binding.</li></ol>
-<h2>Drafting customer workflows</h2>
+<p><strong>Stage:</strong> 1 - Opportunity brief <strong>Status:</strong> draft</p>
+<h2 id="agents-brief-coach--purpose">Purpose</h2>
+<p>A partner to the product manager while they write the opportunity brief. The product manager owns the brief and the agent reviews it with them, section by section, raising questions and suggesting changes. It never writes the brief on its own.</p>
+<h2 id="agents-brief-coach--the-checks">The checks</h2>
+<p>The agent works through the brief in this order. Only the first check is specified in full so far. It also helps draft <a href="#agents-brief-coach--drafting-customer-workflows">customer workflows</a> and prepares the <a href="#agents-brief-coach--preparing-the-basic-story-map">basic story map</a> of the customer need.</p>
+<ol><li><strong>Language</strong> - is the opportunity written clearly, in terms the industry understands? (below)</li><li><strong>Evidence</strong> - is the opportunity backed by measurement, surveys or interviews? See <a href="#docs-stages-01-opportunity-brief--finding-the-opportunity">stage 1</a>.</li><li><strong>Success measure</strong> - is there a measure and a target, and a baseline (or, for something new, a note on why there is none and how one will be established)? See <a href="#docs-stages-01-opportunity-brief--defining-success">defining success</a>.</li><li><strong>Unhappy paths</strong> - what happens when things go wrong, and can the customer challenge an automated decision? See <a href="#docs-stages-01-opportunity-brief--unhappy-paths">unhappy paths</a>.</li><li><strong>Scale</strong> - is the size of the opportunity stated (customers, transactions per day, peaks, growth), with each figure marked as known or estimated and its basis given? See <a href="#docs-stages-01-opportunity-brief--scale">scale</a>.</li><li><strong>Solution content</strong> - is there architecture or technology in the brief that belongs in the design workshop? If so, move it to the Suggestions section, unchanged and labelled non-binding.</li></ol>
+<h2 id="agents-brief-coach--drafting-customer-workflows">Drafting customer workflows</h2>
 <p>Alongside the checks, the agent helps the product manager sketch basic workflows showing how a customer might transact with the business: what they do, what they see, and what happens next, from start to finish.</p>
 <p><strong>Customer level only.</strong> A workflow describes the customer's journey in the customer's terms. It does not name systems, services, APIs or technology. Those are design decisions for the <a href="#docs-stages-02-design-workshop">design workshop</a>.</p>
 <p><strong>How they work together</strong></p>
@@ -284,36 +295,36 @@ tr:last-child td { border-bottom: 0; }
 <p><strong>What it must not do</strong></p>
 <ul><li>Invent steps the product manager has not described or the evidence does not support. Unknowns become questions.</li><li>Design the solution. If a step sounds like a system feature, the agent asks what the customer experiences instead.</li></ul>
 <p><strong>Output</strong> A diagram (Mermaid, so it renders on GitHub and stays in version control) plus a short list of open questions the workflow raised.</p>
-<h2>Preparing the empty story map</h2>
-<p>The shared goal of the product manager and the agent is a brief plus an <strong>empty story map</strong> for the team to work through in the design workshop.</p>
+<h2 id="agents-brief-coach--preparing-the-basic-story-map">Preparing the basic story map</h2>
+<p>The shared goal of the product manager and the agent is a brief plus a <strong>basic story map of the customer need</strong> for the squad to work through in the design workshop.</p>
 <p><strong>What the agent prepares</strong> from the brief's customer workflows and unhappy paths, using the <a href="#templates-story-map">story map template</a>:</p>
-<ul><li><strong>Activities:</strong> the main things the customer does, in order</li><li><strong>Steps:</strong> the steps within each activity, in customer terms</li><li><strong>Failure points:</strong> the places where things go wrong, named but with no stories</li></ul>
-<p><strong>What it leaves empty, on purpose:</strong> stories, release slices and annotations. A pre-filled map anchors the room, so the team fills these in together.</p>
+<ul><li><strong>Starting state:</strong> where the customer is when their need arises or they first reach out</li><li><strong>Completed opportunity:</strong> what is true for the customer when the opportunity has been realised, matching the outcome in the brief</li><li><strong>Activities and steps:</strong> the main things the customer does between the two, in order and in customer terms</li><li><strong>Failure points:</strong> the places where things go wrong, named but with no stories</li></ul>
+<p><strong>What it leaves blank, on purpose:</strong> stories, release slices and annotations. A pre-filled map anchors the room, so the squad fills these in together.</p>
 <p><strong>Traceability.</strong> Every activity and step points back to a workflow in the brief, and every failure point to an unhappy path. Anything it cannot trace becomes a question for the product manager.</p>
 <p><strong>Which tool.</strong> The agent produces the text form of the map. If your team uses a whiteboard tool such as Miro or a Confluence whiteboard, and the agent has access to it, it can build the board itself. Otherwise the product manager recreates the rows there. Which tool to use comes from your <a href="#docs-adoption">tool configuration</a>, once that exists.</p>
-<p><strong>Who decides.</strong> The product manager reviews the backbone and changes it. The team can change it again in the workshop.</p>
+<p><strong>Who decides.</strong> The product manager reviews the backbone and changes it. The squad can change it again in the workshop.</p>
 <p><strong>Draft prompt</strong></p>
-<pre><code>Prepare an empty story map from the brief's customer workflows and unhappy paths, using the story map template.
-Fill in only the activities, the steps within each activity, and the failure points. Use the customer's terms and never name systems or technology.
-Leave stories, release slices and annotations empty.
+<pre><code>Prepare a basic story map of the customer need from the brief's customer workflows and unhappy paths, using the story map template.
+Fill in only the starting state, the completed opportunity (which must match the outcome in the brief), the activities and steps between them, and the failure points. Use the customer's terms and never name systems or technology.
+Leave stories, release slices and annotations blank.
 For every activity, step and failure point, cite the workflow or unhappy path in the brief it came from. If you cannot cite one, ask the product manager instead of adding it.
 List any questions from the brief the workshop will need to settle.</code></pre>
-<h2>Check 1: Language</h2>
-<p>The agent reads the brief as an informed member of the industry would, and checks that the problem is stated in a way anyone in that industry could read and understand.</p>
+<h2 id="agents-brief-coach--check-1-language">Check 1: Language</h2>
+<p>The agent reads the brief as an informed member of the industry would, and checks that the opportunity is stated in a way anyone in that industry could read and understand.</p>
 <p><strong>What it looks for</strong></p>
-<ul><li><strong>Internal jargon:</strong> acronyms, code names and team shorthand that an outsider would not know.</li><li><strong>Industry mismatch:</strong> terms used differently from how the industry or its customers use them, or terms customers would not recognise. For example, in a business that sells beds to consumers, a brief that talks about "sleep surfaces" where customers say "mattress".</li><li><strong>Vague statements:</strong> "customers find it hard" with no number and no description of what happens.</li><li><strong>The company's view instead of the customer's:</strong> problems described as something missing from the system instead of something happening to the customer.</li><li><strong>Claims about the industry that look wrong or unsupported:</strong> it raises these as questions and cites what it checked them against. It does not correct them from memory.</li></ul>
+<ul><li><strong>Internal jargon:</strong> acronyms, code names and team shorthand that an outsider would not know.</li><li><strong>Industry mismatch:</strong> terms used differently from how the industry or its customers use them, or terms customers would not recognise. For example, in a business that sells beds to consumers, a brief that talks about "sleep surfaces" where customers say "mattress".</li><li><strong>Vague statements:</strong> "customers find it hard" with no number and no description of what happens.</li><li><strong>The company's view instead of the customer's:</strong> opportunities described as something missing from the system instead of something the customer experiences or would gain.</li><li><strong>Claims about the industry that look wrong or unsupported:</strong> it raises these as questions and cites what it checked them against. It does not correct them from memory.</li></ul>
 <p><strong>What it produces</strong> A list of findings. Each has the quoted text, what the issue is, a suggested plain-language alternative, and where the suggestion comes from (a page of the <a href="#templates-domain-context">domain context</a>, or "general knowledge, please check").</p>
 <p><strong>Who decides</strong> The product manager accepts or rejects each finding. The agent does not rewrite the brief silently.</p>
-<h2>Inputs</h2>
-<ul><li>The draft brief and the <a href="#templates-problem-brief">problem brief template</a></li><li><strong>Domain context for the industry.</strong> Without it the agent can only judge language in general terms. See <a href="#templates-domain-context">templates/domain-context.md</a>.</li></ul>
-<h2>Outputs</h2>
+<h2 id="agents-brief-coach--inputs">Inputs</h2>
+<ul><li>The draft brief and the <a href="#templates-opportunity-brief">opportunity brief template</a></li><li><strong>Domain context for the industry.</strong> Without it the agent can only judge language in general terms. See <a href="#templates-domain-context">templates/domain-context.md</a>.</li></ul>
+<h2 id="agents-brief-coach--outputs">Outputs</h2>
 <p>A findings list per check, and a short summary of what still needs answering before the brief is ready for the workshop.</p>
-<h2>Human gate</h2>
-<p>The product manager accepts the brief. The engineering lead confirms it is a problem statement.</p>
-<h2>About "training" the agent on an industry</h2>
+<h2 id="agents-brief-coach--human-gate">Human gate</h2>
+<p>The product manager accepts the brief after this review. The agent's review is the independent check for this stage, so no separate human review is needed.</p>
+<h2 id="agents-brief-coach--about-training-the-agent-on-an-industry">About "training" the agent on an industry</h2>
 <p>Fine-tuning a model on an industry is rarely necessary. A more practical route is to give the agent a maintained <strong>domain context</strong>: a glossary, how customers talk, the product space, competitors, and a few good and bad example briefs. That is cheaper, easy to correct when it is wrong, and can be shared or replaced when you move to another industry. Build the domain context first and consider fine-tuning only if it proves insufficient.</p>
-<h2>Draft prompt</h2>
-<pre><code>You are a partner to a product manager who is writing a problem brief. The brief is theirs; you review it with them. You do not design solutions and you do not rewrite the brief unasked.
+<h2 id="agents-brief-coach--draft-prompt">Draft prompt</h2>
+<pre><code>You are a partner to a product manager who is writing an opportunity brief. The brief is theirs; you review it with them. You do not design solutions and you do not rewrite the brief unasked.
 
 Use the domain context supplied to understand the industry and its customers. If something is not covered there, say so.
 
@@ -321,285 +332,289 @@ Check the language. Read the brief as an informed member of this industry would.
 - internal jargon, acronyms and code names an outsider would not know
 - terms used differently from how the industry or its customers use them
 - vague statements with no number or concrete description
-- problems described as missing system features instead of something happening to the customer
+- opportunities described as missing system features instead of something the customer experiences or would gain
 - claims about the industry that look wrong or unsupported
 
 For each finding give: the quoted text, the issue, a plain-language alternative in the industry's own terms, and the source of your suggestion (a domain context entry, or "general knowledge, please check").
 Do not invent facts about the industry. If you are unsure, ask.
 Keep the customer's own wording where it is already clear.</code></pre>
-<h2>Draft prompt for workflows</h2>
+<h2 id="agents-brief-coach--draft-prompt-for-workflows">Draft prompt for workflows</h2>
 <pre><code>Help the product manager sketch how a customer transacts, from start to finish. Stay at the customer level: what the customer does, sees and decides. Never name systems, services or technology.
 
 Ask the product manager to describe the journey. For each step ask what the customer is trying to do, what they see, and what could go wrong. Do not add steps they have not described; list gaps as questions.
 
 Draw a Mermaid flowchart. Show the happy path first. Branch each failure from the step where it happens. Where an automated decision could turn the customer away, show how they reach a person to challenge it.
 List the open questions the workflow raised.</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents-brief-coach--failure-modes">Failure modes</h2>
 <ul><li><strong>Confident but wrong about the industry.</strong> Requiring a source for every suggestion, and allowing "I don't know", is the main defence.</li><li><strong>Flattening the customer's voice</strong> into generic corporate language. It should preserve clear customer wording.</li><li><strong>Over-editing.</strong> Findings should be few and useful, not a rewrite of every sentence.</li><li><strong>A stale or biased domain context.</strong> Someone must own it and date it.</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-brief-coach--metrics">Metrics</h2>
 <ul><li>Findings accepted by the product manager, against findings rejected</li><li>Briefs an outside reader from the industry could follow, checked by spot test</li><li>Briefs accepted at the first workshop without being rewritten</li></ul>
 </section>
 <section class="doc" id="agents-workshop-context-pack" data-file="agents/workshop-context-pack.md">
 <p class="path">agents/workshop-context-pack.md</p>
 <h1>workshop-context-pack</h1>
 <p><strong>Stage:</strong> 2 - Design workshop (before) <strong>Status:</strong> draft</p>
-<h2>Purpose</h2>
-<p>Gives the workshop knowledge of what already exists, so the design fits the real stack. It is a briefing, not a design.</p>
-<h2>Inputs</h2>
-<p>The problem brief, read access to relevant repositories, infrastructure definitions and existing design notes or decision records.</p>
-<h2>Outputs</h2>
+<h2 id="agents-workshop-context-pack--purpose">Purpose</h2>
+<p>Gives the workshop knowledge of what already exists, so the design starts from what is already there. It is a briefing, not a design. Whether to build on what exists, deviate from it or buy something ready-made is for the squad to decide.</p>
+<h2 id="agents-workshop-context-pack--inputs">Inputs</h2>
+<p>The opportunity brief, read access to relevant repositories, infrastructure definitions and existing design notes or decision records.</p>
+<h2 id="agents-workshop-context-pack--outputs">Outputs</h2>
 <p>A one-page sheet: relevant existing services and where they live, constraints that already apply, similar past work, and open questions the brief leaves.</p>
-<h2>Human gate</h2>
+<h2 id="agents-workshop-context-pack--human-gate">Human gate</h2>
 <p>An engineer checks it for errors before the workshop.</p>
-<h2>Draft prompt</h2>
-<pre><code>Read the problem brief and the repositories. Produce a one-page context sheet for a design workshop.
+<h2 id="agents-workshop-context-pack--draft-prompt">Draft prompt</h2>
+<pre><code>Read the opportunity brief and the repositories. Produce a one-page context sheet for a design workshop.
 Include: existing services and components likely to be relevant (with paths), existing constraints (platform, security, data), similar past features, and questions the brief leaves open.
 Do not propose a design or a solution. State when you are unsure, and cite files for every claim.</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents-workshop-context-pack--failure-modes">Failure modes</h2>
 <ul><li>Presenting guesses as facts. Require file citations.</li><li>Drifting into design proposals.</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-workshop-context-pack--metrics">Metrics</h2>
 <p>Engineer-rated usefulness; number of "we already have that" surprises during design.</p>
 </section>
 <section class="doc" id="agents-workshop-scribe" data-file="agents/workshop-scribe.md">
 <p class="path">agents/workshop-scribe.md</p>
 <h1>workshop-scribe</h1>
 <p><strong>Stage:</strong> 2 - Design workshop (during) <strong>Status:</strong> idea</p>
-<h2>Purpose</h2>
+<h2 id="agents-workshop-scribe--purpose">Purpose</h2>
 <p>Captures the story map, decisions and open questions as structured text while the room works.</p>
-<h2>Inputs</h2>
+<h2 id="agents-workshop-scribe--inputs">Inputs</h2>
 <p>Live notes or a transcript, and the current version of the map.</p>
-<h2>Outputs</h2>
+<h2 id="agents-workshop-scribe--outputs">Outputs</h2>
 <p>An updated story map (backbone, steps, slices, annotations), a decision log with reasons, and open questions.</p>
-<h2>Human gate</h2>
+<h2 id="agents-workshop-scribe--human-gate">Human gate</h2>
 <p>The facilitator confirms the capture during and at the end of the session.</p>
-<h2>Draft prompt</h2>
+<h2 id="agents-workshop-scribe--draft-prompt">Draft prompt</h2>
 <pre><code>You are the scribe for a design workshop. Do not contribute ideas.
 From the notes, update the story map: backbone activities, steps under each, release slices, and annotations (exists / new / risk / unknown).
 Keep a decision log (decision, reason, who decided) and a list of open questions.
 If something is ambiguous, list it as a question instead of choosing.</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents-workshop-scribe--failure-modes">Failure modes</h2>
 <ul><li>Smoothing over disagreement. Unresolved points must stay open.</li><li>Output shown on the shared screen too early (see the workshop stage).</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-workshop-scribe--metrics">Metrics</h2>
 <p>Facilitator corrections per session; time from workshop end to accepted design note.</p>
 </section>
 <section class="doc" id="agents-workshop-challenger" data-file="agents/workshop-challenger.md">
 <p class="path">agents/workshop-challenger.md</p>
 <h1>workshop-challenger</h1>
 <p><strong>Stage:</strong> 2 - Design workshop (during) <strong>Status:</strong> idea</p>
-<h2>Purpose</h2>
+<h2 id="agents-workshop-challenger--purpose">Purpose</h2>
 <p>Attacks the current map and design once it is concrete: what breaks, what is missing, what has been assumed.</p>
-<h2>Inputs</h2>
+<h2 id="agents-workshop-challenger--inputs">Inputs</h2>
 <p>The current story map, decision log, and the context pack.</p>
-<h2>Outputs</h2>
+<h2 id="agents-workshop-challenger--outputs">Outputs</h2>
 <p>A short list of challenges, each tied to a step or decision, ranked by risk.</p>
-<h2>Human gate</h2>
+<h2 id="agents-workshop-challenger--human-gate">Human gate</h2>
 <p>The room decides which challenges matter.</p>
-<h2>Draft prompt</h2>
+<h2 id="agents-workshop-challenger--draft-prompt">Draft prompt</h2>
 <pre><code>Review this story map and these decisions. Your job is to find weaknesses, not to be agreeable.
 List: assumptions not yet tested, failure modes at each step, customer needs the map ignores, and places the design conflicts with the context sheet.
 For each, name the step or decision it applies to and why it matters. Rank by risk. Maximum ten.</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents-workshop-challenger--failure-modes">Failure modes</h2>
 <ul><li>Generic risks that fit any project. Require a link to a specific step.</li><li>Used too early, before there is something concrete to attack.</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-workshop-challenger--metrics">Metrics</h2>
 <p>Share of challenges that change the map or decision log.</p>
 </section>
 <section class="doc" id="agents-design-note-writer" data-file="agents/design-note-writer.md">
 <p class="path">agents/design-note-writer.md</p>
 <h1>design-note-writer</h1>
 <p><strong>Stage:</strong> 2 - Design workshop (after) <strong>Status:</strong> draft</p>
-<h2>Purpose</h2>
+<h2 id="agents-design-note-writer--purpose">Purpose</h2>
 <p>Turns the workshop output into a short design note in the repository, which becomes the durable record and the input to story writing.</p>
-<h2>Inputs</h2>
+<h2 id="agents-design-note-writer--inputs">Inputs</h2>
 <p>Story map, decision log, open questions, and the context sheet.</p>
-<h2>Outputs</h2>
+<h2 id="agents-design-note-writer--outputs">Outputs</h2>
 <p>A design note: summary, the map, decisions with reasons, risks, open questions.</p>
-<h2>Human gate</h2>
+<h2 id="agents-design-note-writer--human-gate">Human gate</h2>
 <p>Engineering reviews and accepts the note. Product confirms it still addresses the brief.</p>
-<h2>Draft prompt</h2>
+<h2 id="agents-design-note-writer--draft-prompt">Draft prompt</h2>
 <pre><code>Write a design note from the workshop record. Use only what was decided. Do not add design content that was not agreed.
 Sections: summary, story map, decisions and reasons, risks, open questions.
 Mark anything not decided as an open question.</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents-design-note-writer--failure-modes">Failure modes</h2>
 <ul><li>Filling gaps with plausible design. It must leave gaps visible.</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-design-note-writer--metrics">Metrics</h2>
 <p>Edits engineering makes before accepting; rework on stories traced to the note.</p>
 </section>
 <section class="doc" id="agents-story-writer" data-file="agents/story-writer.md">
 <p class="path">agents/story-writer.md</p>
 <h1>story-writer</h1>
 <p><strong>Stage:</strong> 3 - Stories and sizing <strong>Status:</strong> in use (internal version); this spec generalises it</p>
-<h2>Purpose</h2>
+<h2 id="agents-story-writer--purpose">Purpose</h2>
 <p>Builds initiatives, epics and stories from the story map and design note, each with testable acceptance criteria.</p>
-<h2>Inputs</h2>
-<p>Story map, design note, problem brief.</p>
-<h2>Outputs</h2>
+<h2 id="agents-story-writer--inputs">Inputs</h2>
+<p>Story map, design note, opportunity brief.</p>
+<h2 id="agents-story-writer--outputs">Outputs</h2>
 <p>A roadmap: initiatives, epics, stories. Each story has a trace to a map step and acceptance criteria written as observable behaviour.</p>
-<h2>Human gate</h2>
+<h2 id="agents-story-writer--human-gate">Human gate</h2>
 <p>Product confirms scope and priority; engineering accepts breakdown and size.</p>
-<h2>Draft prompt</h2>
+<h2 id="agents-story-writer--draft-prompt">Draft prompt</h2>
 <pre><code>Create a roadmap from the story map and design note. Do not work from the brief alone.
 Every story must reference the map step it comes from.
 Write acceptance criteria as observable behaviour (given / when / then) that a test could check. Do not describe implementation.
 Keep each story small enough for one reviewable pull request. If it is not, split it.
 List anything you cannot specify as an open question.</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents-story-writer--failure-modes">Failure modes</h2>
 <ul><li>Acceptance criteria that restate the implementation.</li><li>Stories without a trace, which drift from the design.</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-story-writer--metrics">Metrics</h2>
 <p>Stories accepted without rewriting; escaped defects traced to weak criteria.</p>
 </section>
 <section class="doc" id="agents-right-size-checker" data-file="agents/right-size-checker.md">
 <p class="path">agents/right-size-checker.md</p>
 <h1>right-size-checker</h1>
 <p><strong>Stage:</strong> 3 - Stories and sizing <strong>Status:</strong> idea</p>
-<h2>Purpose</h2>
+<h2 id="agents-right-size-checker--purpose">Purpose</h2>
 <p>Checks each story against the team's right-size rule and proposes splits for those that do not fit.</p>
-<h2>Inputs</h2>
+<h2 id="agents-right-size-checker--inputs">Inputs</h2>
 <p>The stories, and the team's right-size rule (target cycle time and how it is applied). Optionally, historical cycle times.</p>
-<h2>Outputs</h2>
+<h2 id="agents-right-size-checker--outputs">Outputs</h2>
 <p>Per story: fits / does not fit, the reason, and a proposed split with acceptance criteria for each part.</p>
-<h2>Human gate</h2>
+<h2 id="agents-right-size-checker--human-gate">Human gate</h2>
 <p>Engineering accepts or edits the result.</p>
-<h2>Draft prompt</h2>
+<h2 id="agents-right-size-checker--draft-prompt">Draft prompt</h2>
 <pre><code>Apply this right-size rule: &lt;team rule&gt;.
 For each story say whether it fits and why, using the acceptance criteria and known complexity.
 For those that do not, propose a split into stories that each fit, keeping the behaviour and acceptance criteria intact.</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents-right-size-checker--failure-modes">Failure modes</h2>
 <ul><li>Splitting by technical layer instead of by observable behaviour.</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-right-size-checker--metrics">Metrics</h2>
 <p>Agreement rate with the team's own sizing; cycle time of stories it passed.</p>
 </section>
 <section class="doc" id="agents-test-author" data-file="agents/test-author.md">
 <p class="path">agents/test-author.md</p>
 <h1>test-author</h1>
 <p><strong>Stage:</strong> 5 - Verification <strong>Status:</strong> idea</p>
-<h2>Purpose</h2>
+<h2 id="agents-test-author--purpose">Purpose</h2>
 <p>Writes acceptance tests from a story's criteria, independently of the implementation, standing in for a dedicated QA function.</p>
-<h2>Inputs</h2>
+<h2 id="agents-test-author--inputs">Inputs</h2>
 <p>The story and its acceptance criteria, and the public interfaces of the system. <strong>Not</strong> the implementation or the author's reasoning.</p>
-<h2>Outputs</h2>
+<h2 id="agents-test-author--outputs">Outputs</h2>
 <p>Acceptance tests that fail if the criteria are not met, plus a note on any criterion that cannot be tested as written.</p>
-<h2>Human gate</h2>
+<h2 id="agents-test-author--human-gate">Human gate</h2>
 <p>An engineer reviews the tests. A failing test raises a question: is the code wrong or are the criteria? A human decides.</p>
-<h2>Draft prompt</h2>
+<h2 id="agents-test-author--draft-prompt">Draft prompt</h2>
 <pre><code>Write acceptance tests for this story from its acceptance criteria only. You will not see the implementation.
 One test per criterion at minimum, plus boundary and failure cases the criteria imply.
 If a criterion is untestable or ambiguous, say so instead of guessing.</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents-test-author--failure-modes">Failure modes</h2>
 <ul><li>Tests that pass vacuously. Check that they fail against a broken implementation.</li><li>Criteria too vague to test, which shows up as a list of ambiguities.</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-test-author--metrics">Metrics</h2>
 <p>Defects caught by these tests that the author's own tests missed; mutation score on changed code.</p>
 </section>
 <section class="doc" id="agents-adversarial-reviewer" data-file="agents/adversarial-reviewer.md">
 <p class="path">agents/adversarial-reviewer.md</p>
 <h1>adversarial-reviewer</h1>
 <p><strong>Stage:</strong> 5 - Verification <strong>Status:</strong> idea</p>
-<h2>Purpose</h2>
+<h2 id="agents-adversarial-reviewer--purpose">Purpose</h2>
 <p>Reviews a pull request to find how it fails. It should be a different model family from the one that wrote the code, since a model shares blind spots with its own output.</p>
-<h2>Inputs</h2>
+<h2 id="agents-adversarial-reviewer--inputs">Inputs</h2>
 <p>The spec, the acceptance criteria and the diff. <strong>Not</strong> the author's summary or reasoning.</p>
-<h2>Outputs</h2>
+<h2 id="agents-adversarial-reviewer--outputs">Outputs</h2>
 <p>Findings, each with a location, the problem, and a concrete failure scenario (inputs or state leading to a wrong result). The author answers each: fixed, or rebutted with evidence.</p>
-<h2>Human gate</h2>
+<h2 id="agents-adversarial-reviewer--human-gate">Human gate</h2>
 <p>The human reviewer decides on merge and settles any unresolved disagreement after one or two rounds. AI approval does not count toward required approvals.</p>
-<h2>Draft prompt</h2>
+<h2 id="agents-adversarial-reviewer--draft-prompt">Draft prompt</h2>
 <pre><code>You are an adversarial reviewer. Your job is to find how this change fails, not to confirm it looks reasonable.
 Judge the diff against the spec and acceptance criteria only.
 For every finding give: location, what is wrong, and a concrete failure scenario (inputs or state that produce a wrong result). Drop findings you cannot support with a scenario.
 Look for: unhandled edge cases, security issues, concurrency, error handling, data integrity, and requirements the change ignores.</code></pre>
-<h2>Implementation notes</h2>
+<h2 id="agents-adversarial-reviewer--implementation-notes">Implementation notes</h2>
 <ul><li>GitHub Copilot code review can be triggered automatically and accepts repository instructions files, but its docs state the underlying model cannot be chosen. If a guaranteed different model matters, run a CI job that calls a named model with this prompt.</li></ul>
-<h2>Failure modes</h2>
+<h2 id="agents-adversarial-reviewer--failure-modes">Failure modes</h2>
 <ul><li>Noise. The scenario requirement is the main filter.</li><li>Anchoring, if the author's summary leaks in.</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-adversarial-reviewer--metrics">Metrics</h2>
 <p>Acceptance rate, noise rate, unique catches, escaped defects.</p>
 </section>
 <section class="doc" id="agents-release-verifier" data-file="agents/release-verifier.md">
 <p class="path">agents/release-verifier.md</p>
 <h1>release-verifier</h1>
 <p><strong>Stage:</strong> 6 - Release <strong>Status:</strong> idea</p>
-<h2>Purpose</h2>
+<h2 id="agents-release-verifier--purpose">Purpose</h2>
 <p>Checks that a release does what its acceptance criteria say, in the live system, and triggers rollback when it does not. Also summarises infrastructure changes for human readers.</p>
-<h2>Inputs</h2>
+<h2 id="agents-release-verifier--inputs">Inputs</h2>
 <p>Acceptance criteria for the released stories, the infrastructure plan, and post-deploy signals.</p>
-<h2>Outputs</h2>
+<h2 id="agents-release-verifier--outputs">Outputs</h2>
 <ul><li>A plain-language summary of the infrastructure plan, with risks</li><li>Post-deploy checks derived from acceptance criteria, and their results</li><li>A rollback recommendation or trigger</li></ul>
-<h2>Human gate</h2>
+<h2 id="agents-release-verifier--human-gate">Human gate</h2>
 <p>The release owner decides on ambiguous results. Clear failures roll back automatically.</p>
-<h2>Draft prompt</h2>
+<h2 id="agents-release-verifier--draft-prompt">Draft prompt</h2>
 <pre><code>Summarise this infrastructure plan: what changes, what could break, what is destructive. Do not approve or reject; deterministic policy checks do that.
 From these acceptance criteria, propose post-deploy checks that can run against the live system without side effects.</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents-release-verifier--failure-modes">Failure modes</h2>
 <ul><li>The summary is treated as a gate. It informs; policy checks block.</li><li>Checks with side effects in production.</li></ul>
-<h2>Metrics</h2>
+<h2 id="agents-release-verifier--metrics">Metrics</h2>
 <p>Time to detect a bad release; false rollback rate.</p>
 </section>
 <section class="doc" id="agents--template" data-file="agents/_template.md">
 <p class="path">agents/_template.md</p>
 <h1>&lt;agent-name&gt;</h1>
 <p><strong>Stage:</strong> &lt;n - name&gt; <strong>Status:</strong> idea / draft / tested / in use</p>
-<h2>Purpose</h2>
+<h2 id="agents--template--purpose">Purpose</h2>
 <p>One or two sentences.</p>
-<h2>Inputs</h2>
+<h2 id="agents--template--inputs">Inputs</h2>
 <p>What it reads. Be explicit about what it must <em>not</em> see, where that matters.</p>
-<h2>Outputs</h2>
+<h2 id="agents--template--outputs">Outputs</h2>
 <p>What it produces, and in what format.</p>
-<h2>Human gate</h2>
+<h2 id="agents--template--human-gate">Human gate</h2>
 <p>Who reviews the output and what they decide.</p>
-<h2>Draft prompt</h2>
+<h2 id="agents--template--draft-prompt">Draft prompt</h2>
 <pre><code>&lt;prompt&gt;</code></pre>
-<h2>Failure modes</h2>
+<h2 id="agents--template--failure-modes">Failure modes</h2>
 <p>How it goes wrong and what to watch for.</p>
-<h2>Metrics</h2>
+<h2 id="agents--template--metrics">Metrics</h2>
 <p>How you know it is working.</p>
 </section>
 <section class="doc" id="docs-adoption" data-file="docs/adoption.md">
 <p class="path">docs/adoption.md</p>
 <h1>Adoption</h1>
-<h2>Rollout</h2>
+<h2 id="docs-adoption--rollout">Rollout</h2>
 <ol><li><strong>Baseline (weeks 1 to 3).</strong> Capture the metrics below. Write a short AI usage policy covering data, IP and accountability. Choose two pilot teams.</li><li><strong>Pilot (weeks 4 to 9).</strong> Run the pilot teams through the stages, starting with acceptance criteria and independent verification. Compare against baseline.</li><li><strong>Roll out (weeks 10 to 13).</strong> Extend to other teams and adapt for data work.</li></ol>
 <p>These timings are a starting point, not a promise.</p>
-<h2>Where it applies</h2>
+<h2 id="docs-adoption--where-it-applies">Where it applies</h2>
 <div class="tablewrap"><table><thead><tr><th>Work</th><th>Where agents add most</th><th>Quality gate</th></tr></thead><tbody><tr><td>Software</td><td>The full lifecycle</td><td>Tests, adversarial review, post-deploy checks</td></tr><tr><td>Data warehousing and ETL</td><td>Transformation code, data tests, lineage, documentation</td><td>Data contracts and reconciliation checks</td></tr></tbody></table></div>
-<p>The principles apply to data warehousing and ETL work in the same way. The difference is usually the customer: it may be an internal team or other engineering teams who consume the data, not an end customer. The problem brief, the success measure and the unhappy paths all still apply, written from that customer's point of view. For example, the measure might be how many consuming teams can answer a question without asking for a special extract, and an unhappy path might be a consumer finding wrong or late data and needing to know who to raise it with.</p>
-<h2>Where it does not apply</h2>
+<p>The principles apply to data warehousing and ETL work in the same way. The difference is usually the customer: it may be an internal team or other engineering teams who consume the data, not an end customer. The opportunity brief, the success measure and the unhappy paths all still apply, written from that customer's point of view. For example, the measure might be how many consuming teams can answer a question without asking for a special extract, and an unhappy path might be a consumer finding wrong or late data and needing to know who to raise it with.</p>
+<h2 id="docs-adoption--where-it-does-not-apply">Where it does not apply</h2>
 <p>This framework is not designed for machine learning research. In research, validation is mathematical and the work is about discovering a capability, not delivering a product. Architecture, security testing and review practices differ accordingly, so applying a product-delivery lifecycle would mislead more than help. Teams doing research should use practices suited to it. Where an ML team ships a product built on that research, the product-delivery parts of this framework can apply to that product.</p>
-<h2>People change</h2>
+<h2 id="docs-adoption--people-change">People change</h2>
 <p>The hardest change is usually not tooling. Where a role has habitually produced solutions (for example, product writing architectures), a tool will not change the behaviour on its own. Agree decision rights at leadership level, show a concrete example of the cost, give people a legitimate channel for their influence, and only then change the templates so the old habit has nowhere to go.</p>
-<h2>Metrics</h2>
+<h2 id="docs-adoption--metrics">Metrics</h2>
 <p>See <a href="#docs-metrics">metrics.md</a>.</p>
 </section>
 <section class="doc" id="docs-metrics" data-file="docs/metrics.md">
 <p class="path">docs/metrics.md</p>
 <h1>Metrics</h1>
 <p>Baseline these before changing anything.</p>
-<h2>Quality</h2>
+<h2 id="docs-metrics--quality">Quality</h2>
 <ul><li><strong>Escaped defects:</strong> defects found after release</li><li><strong>Change failure rate:</strong> releases that need a rollback or hotfix</li><li><strong>Rework rate:</strong> stories reopened or followed by a fix</li></ul>
-<h2>Flow</h2>
+<h2 id="docs-metrics--flow">Flow</h2>
 <ul><li><strong>Lead time:</strong> brief accepted to running in production</li><li><strong>Cycle time:</strong> story started to done</li><li><strong>Throughput:</strong> stories finished per week</li><li><strong>Review wait time:</strong> pull request opened to first human review</li></ul>
-<h2>Adoption</h2>
+<h2 id="docs-metrics--adoption">Adoption</h2>
 <ul><li>Share of pull requests that are agent-assisted, and their defect rate compared with the rest</li></ul>
-<h2>Agent review</h2>
+<h2 id="docs-metrics--agent-review">Agent review</h2>
 <ul><li><strong>Acceptance rate:</strong> findings that lead to a change</li><li><strong>Noise rate:</strong> findings rebutted or dismissed</li><li><strong>Unique catches:</strong> findings no other check found</li></ul>
-<h2>Process</h2>
+<h2 id="docs-metrics--process">Process</h2>
 <ul><li>Rework on stories from workshop-designed features compared with the rest</li></ul>
 </section>
-<section class="doc" id="templates-problem-brief" data-file="templates/problem-brief.md">
-<p class="path">templates/problem-brief.md</p>
-<h1>Problem brief: &lt;title&gt;</h1>
-<p><strong>Owner:</strong> &lt;product lead&gt;  <strong>Date:</strong> &lt;date&gt;  <strong>Status:</strong> draft / ready for workshop</p>
-<h2>Customer</h2>
+<section class="doc" id="templates-opportunity-brief" data-file="templates/opportunity-brief.md">
+<p class="path">templates/opportunity-brief.md</p>
+<h1>Opportunity brief: &lt;title&gt;</h1>
+<p><strong>Owner:</strong> &lt;product manager&gt;  <strong>Date:</strong> &lt;date&gt;  <strong>Status:</strong> draft / reviewed by brief-coach / ready for workshop</p>
+<h2 id="templates-opportunity-brief--customer">Customer</h2>
 <p>Who are they, and what are they trying to do?</p>
-<h2>Problem</h2>
-<p>What is going wrong for the customer? Write it in plain language, so that anyone in your industry could read it and understand it. No internal jargon, code names or unexplained acronyms. Use a number where you can.</p>
-<h2>Evidence</h2>
+<h2 id="templates-opportunity-brief--opportunity">Opportunity</h2>
+<p>What is the opportunity for the customer? It may be a problem to solve, or a benefit they would value. Write it in plain language, so that anyone in your industry could read it and understand it. No internal jargon, code names or unexplained acronyms. Use a number where you can.</p>
+<h2 id="templates-opportunity-brief--evidence">Evidence</h2>
 <p>How do we know? List each source and what it showed. Prefer more than one method.</p>
-<div class="tablewrap"><table><thead><tr><th>Method</th><th>Source and date</th><th>What it showed</th></tr></thead><tbody><tr><td>Measured failure in the current system</td><td>e.g. drop-out rate at each step of the process</td><td></td></tr><tr><td>Customer survey</td><td>e.g. sample size, questions asked</td><td></td></tr><tr><td>Customer interviews</td><td>e.g. number of interviews, who</td><td></td></tr></tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th>Method</th><th>Source and date</th><th>What it showed</th></tr></thead><tbody><tr><td>Measured the current system</td><td>e.g. drop-out rate at each step of a process (a problem), or how many customers already use a workaround or ask for the capability (a benefit)</td><td></td></tr><tr><td>Customer survey</td><td>e.g. sample size, questions asked</td><td></td></tr><tr><td>Customer interviews</td><td>e.g. number of interviews, who</td><td></td></tr></tbody></table></div>
 <p>If one method is missing, say what it would add.</p>
-<h2>Outcome</h2>
-<p>What would be true if this were solved? How will we measure it, and where are we today?</p>
-<div class="tablewrap"><table><thead><tr><th>Outcome</th><th>Measure</th><th>Baseline (today)</th><th>Target</th></tr></thead><tbody><tr><td>e.g. more customers finish onboarding</td><td>e.g. % who start onboarding and do not finish</td><td>e.g. measured over the last 90 days</td><td></td></tr></tbody></table></div>
-<p>Say how approaches will be compared, for example an A/B test, or a before and after comparison if there are too few customers for a fair test. Do not choose the approach here.</p>
-<h2>Customer workflows</h2>
+<h2 id="templates-opportunity-brief--outcome">Outcome</h2>
+<p>What would be true if this were delivered? How will we measure it, and where are we today?</p>
+<div class="tablewrap"><table><thead><tr><th>Outcome</th><th>Measure</th><th>Baseline (today)</th><th>Target</th></tr></thead><tbody><tr><td>e.g. more customers finish onboarding (a problem solved)</td><td>e.g. % who start onboarding and do not finish</td><td>e.g. measured over the last 90 days</td><td></td></tr><tr><td>e.g. customers save time on a routine task (a benefit delivered)</td><td>e.g. average minutes to complete the task</td><td>e.g. measured over the last 90 days</td><td></td></tr></tbody></table></div>
+<p>Record the measure, the baseline and the target. If there is no baseline because this is new, write "none" and say how one will be established, for example by measuring the first release or using a comparable product as a reference. Do not say how to reach the target.</p>
+<h2 id="templates-opportunity-brief--scale">Scale</h2>
+<p>How big is the opportunity? If the existing system already gives these figures, say where they come from. If not, give your best estimate and mark it as one. A range is fine.</p>
+<div class="tablewrap"><table><thead><tr><th>Measure</th><th>Figure or range</th><th>Known or estimated, and the basis</th></tr></thead><tbody><tr><td>Number of customers or users</td><td></td><td></td></tr><tr><td>Transactions or requests per day</td><td></td><td></td></tr><tr><td>Busiest period (peak)</td><td></td><td></td></tr><tr><td>Expected growth</td><td></td><td></td></tr><tr><td>Amount of data</td><td></td><td></td></tr></tbody></table></div>
+<p>Give the scale only. Do not say how to handle it.</p>
+<h2 id="templates-opportunity-brief--customer-workflows">Customer workflows</h2>
 <p>How does a customer transact, start to finish? Show the happy path and where each failure branches off. Keep it at the customer level: what they do and see, with no systems or technology.</p>
 <pre><code>flowchart TD
     A[Customer starts sign-up] --&gt; B[Customer enters details]
@@ -612,60 +627,62 @@ From these acceptance criteria, propose post-deploy checks that can run against 
     G --&gt; H{Person reviews}
     H --&gt;|Overturned| D
     H --&gt;|Upheld| I[Customer told the outcome and their options]</code></pre>
-<h2>Unhappy paths</h2>
+<h2 id="templates-opportunity-brief--unhappy-paths">Unhappy paths</h2>
 <p>What happens when it goes wrong for the customer? For each failure, say what the customer sees, what they can do next, and how they reach a person to challenge an automated decision.</p>
 <div class="tablewrap"><table><thead><tr><th>Failure</th><th>What the customer experiences</th><th>Next step for the customer</th><th>Who handles it, and how fast</th></tr></thead><tbody><tr><td>e.g. identity (KYC) check fails</td><td></td><td>e.g. retry, other evidence, or ask for a person to review</td><td></td></tr></tbody></table></div>
 <p>Also say what we will track, for example failures, challenges, challenges upheld, and time to resolve.</p>
-<h2>Constraints</h2>
+<h2 id="templates-opportunity-brief--constraints">Constraints</h2>
 <p>Cost, deadlines, compliance, performance, dependencies, anything the solution must respect.</p>
-<h2>Out of scope</h2>
+<h2 id="templates-opportunity-brief--out-of-scope">Out of scope</h2>
 <p>What we are deliberately not solving.</p>
-<h2>Open questions</h2>
+<h2 id="templates-opportunity-brief--open-questions">Open questions</h2>
 <p>What we do not yet know.</p>
-<h2>Suggestions (optional, non-binding)</h2>
+<h2 id="templates-opportunity-brief--suggestions-optional-non-binding">Suggestions (optional, non-binding)</h2>
 <p>Ideas about approach. These are input for the design workshop, not requirements.</p>
 </section>
 <section class="doc" id="templates-story-map" data-file="templates/story-map.md">
 <p class="path">templates/story-map.md</p>
 <h1>Story map: &lt;title&gt;</h1>
-<p><strong>Brief:</strong> &lt;link to the problem brief&gt;  <strong>Prepared by:</strong> &lt;product manager&gt; with the brief-coach  <strong>Status:</strong> empty, ready for the workshop</p>
-<p>An empty story map is the starting point for the <a href="#docs-stages-02-design-workshop">design workshop</a>. The product manager and the agent prepare the backbone from the brief's customer workflows. The team fills in everything else together in the room.</p>
-<p>This is the text form. If your team uses a whiteboard tool such as Miro or a Confluence whiteboard, recreate it there with the same rows. The rows matter more than the tool.</p>
-<h2>What is prepared, and what is left empty</h2>
-<div class="tablewrap"><table><thead><tr><th>Row</th><th>Prepared before the workshop</th><th>Filled in by the team</th></tr></thead><tbody><tr><td>Activities</td><td>Yes, from the customer workflows</td><td>The team may rename, add or remove</td></tr><tr><td>Steps</td><td>Yes, in customer terms</td><td>The team may change them</td></tr><tr><td>Stories</td><td><strong>Empty</strong></td><td>Yes</td></tr><tr><td>When things go wrong</td><td>Failure points named, from the brief's unhappy paths</td><td>Stories for each</td></tr><tr><td>Release slices</td><td><strong>Empty</strong></td><td>Yes</td></tr><tr><td>Annotations</td><td><strong>Empty</strong></td><td>Yes: exists / new / risk / unknown</td></tr></tbody></table></div>
-<p>Leave the lower rows empty on purpose. A pre-filled map anchors the room and stops people thinking about the customer.</p>
-<h2>Backbone</h2>
-<p>Read left to right in the order the customer experiences it.</p>
+<p><strong>Brief:</strong> &lt;link to the opportunity brief&gt;  <strong>Prepared by:</strong> &lt;product manager&gt; with the brief-coach  <strong>Status:</strong> basic map of the customer need, ready for the workshop</p>
+<p>A basic story map of the customer need is the starting point for the <a href="#docs-stages-02-design-workshop">design workshop</a>. The product manager and the agent prepare it from the brief's customer workflows: the customer's starting state, the completed opportunity, and the main steps between. The squad fills in everything else together in the room.</p>
+<p>This is the text form. If your squad uses a whiteboard tool such as Miro or a Confluence whiteboard, recreate it there with the same rows. The rows matter more than the tool.</p>
+<h2 id="templates-story-map--starting-state-and-completed-opportunity">Starting state and completed opportunity</h2>
+<div class="tablewrap"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Starting state</strong></td><td>&lt;where the customer is when their need arises or they first reach out, in their words&gt;</td></tr><tr><td><strong>Completed opportunity</strong></td><td>&lt;what is true for the customer when the opportunity has been realised, in their words. This matches the outcome in the brief&gt;</td></tr></tbody></table></div>
+<h2 id="templates-story-map--what-is-prepared-and-what-is-left-for-the-squad">What is prepared, and what is left for the squad</h2>
+<div class="tablewrap"><table><thead><tr><th>Row</th><th>Prepared before the workshop</th><th>Filled in by the squad</th></tr></thead><tbody><tr><td>Starting state and completed opportunity</td><td>Yes, from the brief</td><td>The squad may change them</td></tr><tr><td>Activities</td><td>Yes, from the customer workflows</td><td>The squad may rename, add or remove</td></tr><tr><td>Steps</td><td>Yes, in customer terms</td><td>The squad may change them</td></tr><tr><td>When things go wrong</td><td>Failure points named, from the brief's unhappy paths</td><td>Stories for each</td></tr><tr><td>Stories</td><td>Blank</td><td>Yes</td></tr><tr><td>Release slices</td><td>Blank</td><td>Yes</td></tr><tr><td>Annotations</td><td>Blank</td><td>Yes: exists / new / risk / unknown</td></tr></tbody></table></div>
+<p>Leave the lower rows blank on purpose. A pre-filled map anchors the room and stops people thinking about the customer.</p>
+<h2 id="templates-story-map--backbone">Backbone</h2>
+<p>Read left to right in the order the customer experiences it, from the starting state to the completed opportunity.</p>
 <div class="tablewrap"><table><thead><tr><th></th><th>Activity 1: &lt;what the customer is doing&gt;</th><th>Activity 2: &lt;what the customer is doing&gt;</th><th>Activity 3: &lt;what the customer is doing&gt;</th></tr></thead><tbody><tr><td><strong>Steps</strong></td><td>&lt;step&gt; &lt;br&gt; &lt;step&gt;</td><td>&lt;step&gt; &lt;br&gt; &lt;step&gt;</td><td>&lt;step&gt; &lt;br&gt; &lt;step&gt;</td></tr><tr><td><strong>Stories</strong></td><td></td><td></td><td></td></tr><tr><td><strong>When things go wrong</strong></td><td>&lt;failure point, from the brief&gt;</td><td>&lt;failure point, from the brief&gt;</td><td></td></tr><tr><td><strong>Release slice 1</strong> (thinnest end to end)</td><td></td><td></td><td></td></tr><tr><td><strong>Release slice 2</strong></td><td></td><td></td><td></td></tr><tr><td><strong>Release slice 3</strong></td><td></td><td></td><td></td></tr><tr><td><strong>Annotations</strong> (exists / new / risk / unknown)</td><td></td><td></td><td></td></tr></tbody></table></div>
-<h2>Questions carried in from the brief</h2>
+<h2 id="templates-story-map--questions-carried-in-from-the-brief">Questions carried in from the brief</h2>
 <p>Open questions from the brief that the workshop needs to settle.</p>
 <p>-</p>
-<h2>Rules for the backbone</h2>
-<ul><li>Written in the customer's terms, as things they do, never as system features</li><li>Every activity and step traces to a customer workflow in the brief</li><li>Every failure point traces to an unhappy path in the brief</li></ul>
+<h2 id="templates-story-map--rules-for-the-backbone">Rules for the backbone</h2>
+<ul><li>Written in the customer's terms, as things they do, never as system features</li><li>Starts at the customer's starting state and ends at the completed opportunity, with nothing missing in between</li><li>Every activity and step traces to a customer workflow in the brief</li><li>Every failure point traces to an unhappy path in the brief</li></ul>
 </section>
 <section class="doc" id="templates-domain-context" data-file="templates/domain-context.md">
 <p class="path">templates/domain-context.md</p>
 <h1>Domain context: &lt;industry or product space&gt;</h1>
 <p><strong>Owner:</strong> &lt;name&gt;  <strong>Last reviewed:</strong> &lt;date&gt;</p>
 <p>Background that agents (and new colleagues) need to understand the industry and its customers. Keep it short, specific and dated. When something in it is wrong, fix it here so every agent benefits.</p>
-<h2>The business</h2>
+<h2 id="templates-domain-context--the-business">The business</h2>
 <p>What is sold, to whom, and how. For example, a consumer business selling beds online and in stores.</p>
-<h2>Product space</h2>
+<h2 id="templates-domain-context--product-space">Product space</h2>
 <p>The main product types, the terms that describe them and the distinctions that matter to customers.</p>
-<h2>How customers talk</h2>
+<h2 id="templates-domain-context--how-customers-talk">How customers talk</h2>
 <p>The words customers actually use for the things they want and the problems they have. Where possible, quote real reviews, support tickets and interview notes. Note where customer words differ from the company's internal words.</p>
-<h2>Glossary</h2>
-<p>Terms, acronyms and internal names, each with a plain-language meaning. Mark which ones are internal only, and so should not appear in a customer-facing problem statement.</p>
+<h2 id="templates-domain-context--glossary">Glossary</h2>
+<p>Terms, acronyms and internal names, each with a plain-language meaning. Mark which ones are internal only, and so should not appear in a customer-facing opportunity statement.</p>
 <div class="tablewrap"><table><thead><tr><th>Term</th><th>Meaning</th><th>Internal only?</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table></div>
-<h2>Customer journey</h2>
+<h2 id="templates-domain-context--customer-journey">Customer journey</h2>
 <p>The main steps a customer takes, from first contact to becoming and staying a customer.</p>
-<h2>Competitors and alternatives</h2>
+<h2 id="templates-domain-context--competitors-and-alternatives">Competitors and alternatives</h2>
 <p>Who else the customer could choose, and how they describe themselves.</p>
-<h2>Rules and regulation</h2>
+<h2 id="templates-domain-context--rules-and-regulation">Rules and regulation</h2>
 <p>Regulations, standards and industry codes that shape what can be offered, and who to ask about them.</p>
-<h2>Examples</h2>
-<p>Two or three past problem briefs: one clear, one unclear, with a note on what made the difference.</p>
-<h2>Known gaps</h2>
+<h2 id="templates-domain-context--examples">Examples</h2>
+<p>Two or three past opportunity briefs: one clear, one unclear, with a note on what made the difference.</p>
+<h2 id="templates-domain-context--known-gaps">Known gaps</h2>
 <p>What this document does not cover, so agents know when to say "I don't know".</p>
 </section>
     <div class="pager" id="pager"></div>
@@ -675,7 +692,7 @@ From these acceptance criteria, propose post-deploy checks that can run against 
 <script>
 (function () {
   document.documentElement.classList.add('js');
-  var order = [{"id":"readme","title":"AI SDLC"},{"id":"docs-principles","title":"Principles"},{"id":"docs-lifecycle","title":"Lifecycle overview"},{"id":"docs-stages-01-problem-brief","title":"1. Problem brief"},{"id":"docs-stages-02-design-workshop","title":"2. Design workshop"},{"id":"docs-stages-03-stories-and-sizing","title":"3. Stories and sizing"},{"id":"docs-stages-04-build","title":"4. Build"},{"id":"docs-stages-05-verification","title":"5. Verification"},{"id":"docs-stages-06-release","title":"6. Release"},{"id":"agents-brief-coach","title":"brief-coach"},{"id":"agents-workshop-context-pack","title":"workshop-context-pack"},{"id":"agents-workshop-scribe","title":"workshop-scribe"},{"id":"agents-workshop-challenger","title":"workshop-challenger"},{"id":"agents-design-note-writer","title":"design-note-writer"},{"id":"agents-story-writer","title":"story-writer"},{"id":"agents-right-size-checker","title":"right-size-checker"},{"id":"agents-test-author","title":"test-author"},{"id":"agents-adversarial-reviewer","title":"adversarial-reviewer"},{"id":"agents-release-verifier","title":"release-verifier"},{"id":"agents--template","title":"<agent-name>"},{"id":"docs-adoption","title":"Adoption"},{"id":"docs-metrics","title":"Metrics"},{"id":"templates-problem-brief","title":"Problem brief: <title>"},{"id":"templates-story-map","title":"Story map: <title>"},{"id":"templates-domain-context","title":"Domain context: <industry or product space>"}];
+  var order = [{"id":"readme","title":"AI SDLC"},{"id":"docs-principles","title":"Principles"},{"id":"docs-lifecycle","title":"Lifecycle overview"},{"id":"docs-stages-01-opportunity-brief","title":"1. Opportunity brief"},{"id":"docs-stages-02-design-workshop","title":"2. Design workshop"},{"id":"docs-stages-03-stories-and-sizing","title":"3. Stories and sizing"},{"id":"docs-stages-04-build","title":"4. Build"},{"id":"docs-stages-05-verification","title":"5. Verification"},{"id":"docs-stages-06-release","title":"6. Release"},{"id":"agents-brief-coach","title":"brief-coach"},{"id":"agents-workshop-context-pack","title":"workshop-context-pack"},{"id":"agents-workshop-scribe","title":"workshop-scribe"},{"id":"agents-workshop-challenger","title":"workshop-challenger"},{"id":"agents-design-note-writer","title":"design-note-writer"},{"id":"agents-story-writer","title":"story-writer"},{"id":"agents-right-size-checker","title":"right-size-checker"},{"id":"agents-test-author","title":"test-author"},{"id":"agents-adversarial-reviewer","title":"adversarial-reviewer"},{"id":"agents-release-verifier","title":"release-verifier"},{"id":"agents--template","title":"<agent-name>"},{"id":"docs-adoption","title":"Adoption"},{"id":"docs-metrics","title":"Metrics"},{"id":"templates-opportunity-brief","title":"Opportunity brief: <title>"},{"id":"templates-story-map","title":"Story map: <title>"},{"id":"templates-domain-context","title":"Domain context: <industry or product space>"}];
   var docs = {};
   document.querySelectorAll('.doc').forEach(function (d) { docs[d.id] = d; });
   var links = document.querySelectorAll('[data-nav]');
@@ -683,7 +700,7 @@ From these acceptance criteria, propose post-deploy checks that can run against 
   var menu = document.getElementById('menu');
   var pager = document.getElementById('pager');
 
-  function show(id) {
+  function show(id, keepScroll) {
     if (!docs[id]) id = 'readme';
     Object.keys(docs).forEach(function (k) { docs[k].classList.toggle('active', k === id); });
     links.forEach(function (a) {
@@ -697,10 +714,25 @@ From these acceptance criteria, propose post-deploy checks that can run against 
     document.title = (order[n] ? order[n].title + ' \u00b7 ' : '') + 'AI SDLC Framework';
     indexEl.classList.remove('open');
     menu.setAttribute('aria-expanded', 'false');
-    window.scrollTo(0, 0);
+    if (!keepScroll) window.scrollTo(0, 0);
   }
-  function route() { show(location.hash.replace(/^#/, '') || 'readme'); }
+  function route() {
+    var h = location.hash.replace(/^#/, '') || 'readme';
+    var i = h.indexOf('--');
+    var el = i > -1 ? document.getElementById(h) : null;
+    show(i > -1 ? h.slice(0, i) : h, !!el);
+    if (el) el.scrollIntoView({ behavior: 'auto' });
+  }
   window.addEventListener('hashchange', route);
+  // Handle in-page links directly, so they do not depend on the browser firing hashchange.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var h = a.getAttribute('href').slice(1);
+    e.preventDefault();
+    if (location.hash.replace(/^#/, '') !== h) { location.hash = h; }
+    route();
+  });
   menu.addEventListener('click', function () {
     var open = indexEl.classList.toggle('open');
     menu.setAttribute('aria-expanded', open ? 'true' : 'false');

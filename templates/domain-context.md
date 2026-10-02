@@ -14,7 +14,7 @@ The main product types, the terms that describe them and the distinctions that m
 The words customers actually use for the things they want and the problems they have. Where possible, quote real reviews, support tickets and interview notes. Note where customer words differ from the company's internal words.
 
 ## Glossary
-Terms, acronyms and internal names, each with a plain-language meaning. Mark which ones are internal only, and so should not appear in a customer-facing problem statement.
+Terms, acronyms and internal names, each with a plain-language meaning. Mark which ones are internal only, and so should not appear in a customer-facing opportunity statement.
 
 | Term | Meaning | Internal only? |
 |---|---|---|
@@ -30,7 +30,7 @@ Who else the customer could choose, and how they describe themselves.
 Regulations, standards and industry codes that shape what can be offered, and who to ask about them.
 
 ## Examples
-Two or three past problem briefs: one clear, one unclear, with a note on what made the difference.
+Two or three past opportunity briefs: one clear, one unclear, with a note on what made the difference.
 
 ## Known gaps
 What this document does not cover, so agents know when to say "I don't know".

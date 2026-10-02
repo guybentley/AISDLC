@@ -1,8 +1,8 @@
 # Stage 2: Design workshop
 
-**Human owners:** Product (problem), Platform and Software engineering (design)
-**Agents:** [workshop-context-pack](../../agents/workshop-context-pack.md), [workshop-scribe](../../agents/workshop-scribe.md), [workshop-challenger](../../agents/workshop-challenger.md), [design-note-writer](../../agents/design-note-writer.md)
-**Output:** a story map and a design note committed to the repository
+- **Human owners:** Product (opportunity), Platform and Software engineering (design)
+- **Agents:** [workshop-context-pack](../../agents/workshop-context-pack.md), [workshop-scribe](../../agents/workshop-scribe.md), [workshop-challenger](../../agents/workshop-challenger.md), [design-note-writer](../../agents/design-note-writer.md)
+- **Output:** a story map and a design note committed to the repository
 
 ## Purpose
 
@@ -10,13 +10,19 @@ Design the solution live, with product, platform and software in the room, using
 
 ## Format
 
-The workshop starts from the empty [story map](../../templates/story-map.md) prepared in [stage 1](01-problem-brief.md).
+The workshop starts from the basic [story map](../../templates/story-map.md) of the customer need prepared in [stage 1](01-opportunity-brief.md).
 
 1. **Backbone (Product leads):** walk the team through the prepared customer journey, step by step, in plain language. The team challenges it and changes it where it is wrong.
 2. **Ribs:** what the customer does or needs at each step, including the stories for the points where things go wrong.
 3. **Slice:** draw the line for the thinnest end-to-end version that delivers value, then later slices.
 4. **Annotate (Platform and Software):** for each step in the first slice, mark what exists, what is new, what is risky and what is unknown.
 5. **Decide:** record design decisions, reasons and open questions.
+
+## Build, buy or deviate
+
+The existing stack is a starting point, not a rule. Engineering may recommend deviating from it, or buying a ready-made product, when that is the best way to meet the need: the most efficient, the lowest long-term cost, or the quickest.
+
+This is a decision for the whole squad. Product brings the commercial view of its area, including the profit and loss. Engineering brings feasibility and the cost to build and run. The squad weighs them together and records the decision and the reasons.
 
 ## Where agents help
 
@@ -25,15 +31,15 @@ The workshop starts from the empty [story map](../../templates/story-map.md) pre
 **During:** three separate jobs.
 - *Scribe:* captures the map, decisions and open questions as structured text.
 - *Challenger:* asked "what breaks, what is missing, what did we assume?" against the current map.
-- *Stack checker:* asked whether a proposed approach fits what exists.
+- *Stack checker:* asked how a proposed approach compares with what exists, and what it would cost to deviate from it.
 
-Keep agent output off the shared screen during steps 1 to 3. A model-drafted journey shown early anchors the room and stops people thinking about the customer. Ask for options only after the problem is agreed, and only when asked.
+Keep agent output off the shared screen during steps 1 to 3. A model-drafted journey shown early anchors the room and stops people thinking about the customer. Ask for options only after the opportunity is agreed, and only when asked.
 
 **After:** the design-note writer produces a short design note in the repository. Engineering reviews it.
 
 ## Human gate
 
-Engineering accepts the design note. Product confirms it still solves the problem in the brief.
+Engineering accepts the design note. Product confirms it still delivers the opportunity in the brief.
 
 ## Anti-patterns
 
