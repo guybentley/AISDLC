@@ -13,12 +13,12 @@ Story map, decision log, open questions, and the context sheet.
 A design note: summary, the map, decisions with reasons, risks, open questions.
 
 ## Human gate
-Engineering reviews and accepts the note. Product confirms it still addresses the brief.
+The squad reviews and accepts the note, and confirms it still addresses the brief.
 
 ## Draft prompt
 ```
 Write a design note from the workshop record. Use only what was decided. Do not add design content that was not agreed.
-Sections: summary, story map, decisions and reasons, risks, open questions.
+Sections: summary, story map, how success will be measured (the agreed measure and target for each slice), decisions and reasons, risks, open questions.
 Mark anything not decided as an open question.
 ```
 

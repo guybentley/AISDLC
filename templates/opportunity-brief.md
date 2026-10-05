@@ -71,6 +71,15 @@ Also say what we will track, for example failures, challenges, challenges upheld
 ## Constraints
 Cost, deadlines, compliance, performance, dependencies, anything the solution must respect.
 
+## Sensitive data and where it applies
+What kinds of sensitive data does this involve, if any? For example personal data, payment card details, or health information. Different data needs different levels of protection, so the squad uses this to judge how much protection the design needs.
+
+Also say:
+- which countries or regions it will be used in, or where its customers and data will be
+- any specific laws or regulations that apply there, such as data protection, privacy or financial rules
+
+These differ from place to place and can change what the design must do. If you are not sure what applies, say so and name who will confirm, for example your legal or compliance function. Say what applies, not how to comply. That is a design decision for the squad.
+
 ## Out of scope
 What we are deliberately not solving.
 

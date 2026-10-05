@@ -22,7 +22,7 @@ If the criteria are weak, all three are weak. Investment in stages 1 to 3 pays b
 | After | Gate | Decided by |
 |---|---|---|
 | Stage 1 | Brief is an opportunity statement, ready for the workshop | Product manager, after the brief-coach's independent review |
-| Stage 2 | Design note accepted | Engineering, with product confirming |
+| Stage 2 | Design note accepted | The squad, after the challenger's and design-attacker's independent reviews |
 | Stage 3 | Breakdown, size, scope | Engineering and product |
 | Stage 4 | Pull request opened | Owning engineer |
 | Stage 5 | Merge | Reviewer with merge authority |

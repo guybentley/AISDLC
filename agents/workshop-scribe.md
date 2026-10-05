@@ -13,7 +13,7 @@ Live notes or a transcript, and the current version of the map.
 An updated story map (backbone, steps, slices, annotations), a decision log with reasons, and open questions.
 
 ## Human gate
-The facilitator confirms the capture during and at the end of the session.
+The product manager, as facilitator, confirms the capture with the squad during and at the end of the session.
 
 ## Draft prompt
 ```
