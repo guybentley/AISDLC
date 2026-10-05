@@ -12,6 +12,7 @@ Turn the story map and design note into a roadmap the team can build, without ha
 
 - Every story traces to a step on the story map.
 - Every story has acceptance criteria that can be turned into a test. This is the thread the rest of the lifecycle reads.
+- The ways of measuring success agreed in [stage 2](02-design-workshop.md) are detailed here: how each measure is taken, and which stories and acceptance criteria check it.
 - Stories are small enough for one agent session and one reviewable pull request.
 
 ## Sizing

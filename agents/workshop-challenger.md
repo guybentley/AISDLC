@@ -13,7 +13,7 @@ The current story map, decision log, and the context pack.
 A short list of challenges, each tied to a step or decision, ranked by risk.
 
 ## Human gate
-The room decides which challenges matter.
+The squad decides which challenges matter. The challenger's review is the independent check on the design for this stage.
 
 ## Draft prompt
 ```

@@ -64,6 +64,14 @@ Useful figures include:
 
 A range is more honest than a single number, and an estimate with its basis is better than a blank. The brief gives the scale, not the capacity or technology to handle it. That is a design decision for the squad.
 
+## Sensitive data and where it applies
+
+Say what kinds of sensitive data the opportunity involves, such as personal data, payment card details or health information, because different data needs different levels of protection.
+
+Also say which countries or regions it will be used in, or where its customers and data will be, and any specific laws or regulations that apply there, such as data protection, privacy or financial rules. These differ from place to place and can change what the design must do. If you are not sure what applies, say so and name who will confirm, such as your legal or compliance function.
+
+The brief records what applies, not how to comply. That is a design decision for the squad.
+
 ## Unhappy paths
 
 A brief describes what happens when things go wrong, not only when they go right. Most problems customers remember happen on the unhappy path, and it is the part most often left until late in delivery, when it is expensive to add.
@@ -109,6 +117,7 @@ The backbone is a draft. The team can rename, reorder, add or remove anything on
 - Basic customer workflows, from start to finish, in the customer's terms
 - What happens when things go wrong: the unhappy paths, including how a customer challenges an automated decision
 - Constraints: cost, time, compliance, performance, dependencies
+- The kinds of sensitive data involved, such as personal data or payment card details, and the countries it will be used in and any specific laws that apply there
 - What is explicitly out of scope
 - Open questions
 
