@@ -12,6 +12,7 @@ Baseline these before changing anything.
 - **Cycle time:** story started to done
 - **Throughput:** stories finished per week
 - **Review wait time:** pull request opened to first human review
+- **Split rate:** the share of stories split in refinement. It should fall as a squad matures
 
 ## Adoption
 - Share of pull requests that are agent-assisted, and their defect rate compared with the rest

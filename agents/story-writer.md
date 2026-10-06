@@ -1,7 +1,7 @@
 # story-writer
 
 **Stage:** 3 - Stories and sizing
-**Status:** in use (internal version); this spec generalises it
+**Status:** in use
 
 ## Purpose
 Builds initiatives, epics and stories from the story map and design note, each with testable acceptance criteria.
@@ -12,8 +12,11 @@ Story map, design note, opportunity brief.
 ## Outputs
 A roadmap: initiatives, epics, stories. Each story has a trace to a map step and acceptance criteria written as observable behaviour.
 
+## How the pair works
+The product manager and the agent write the epics and stories together, and either can lead. The product manager can direct the agent, or the agent can draft and the product manager can shape it. Every so often the product manager writes a set of stories unaided and the agent reviews them, so the skill stays sharp. The squad then refines and estimates the stories together in a single step.
+
 ## Human gate
-Product confirms scope and priority; engineering accepts breakdown and size.
+Product accepts the stories, including scope, priority and acceptance criteria. Estimation and sizing belong to engineering; see the right-size-checker.
 
 ## Draft prompt
 ```

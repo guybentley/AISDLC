@@ -8,6 +8,10 @@
 
 Capture the customer opportunity, the outcome that matters, and the constraints - without prescribing a solution. An opportunity does not have to be a problem to solve. It can be a pure benefit the customer would value.
 
+## Work that arrives outside the process
+
+Ideas and requests do not always arrive through this stage. A stakeholder, a support ticket or a colleague may add an item straight into the product backlog. The [backlog-watcher](../../agents/backlog-watcher.md) looks for these and brings them to the product manager with suggestions: link the item to an existing opportunity, start a new opportunity brief, merge it as a duplicate, take the fast route for a genuine bug, park it, or decline it with a reason. The product manager decides. The aim is that good ideas are not lost and that everything in the backlog traces back to a customer opportunity.
+
 ## Goal
 
 Work out what the customer actually needs or would value. The opportunity may be a problem to solve, such as customers dropping out of a process, or a pure benefit, such as a capability they would use and value. Gathering information for the brief is an investigation, not a specification exercise: the output is an evidence-backed statement of the customer's opportunity, and nothing about how to deliver it.

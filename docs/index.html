@@ -93,7 +93,7 @@ tr:last-child td { border-bottom: 0; }
     <div class="groups" id="groups">
 <div class="group"><h2>Overview</h2><ul><li><a href="#readme" data-nav="readme">AI SDLC</a></li><li><a href="#docs-principles" data-nav="docs-principles">Principles</a></li><li><a href="#docs-lifecycle" data-nav="docs-lifecycle">Lifecycle overview</a></li></ul></div>
 <div class="group"><h2>Stages</h2><ul><li><a href="#docs-stages-01-opportunity-brief" data-nav="docs-stages-01-opportunity-brief">1. Opportunity brief</a></li><li><a href="#docs-stages-02-design-workshop" data-nav="docs-stages-02-design-workshop">2. Design workshop</a></li><li><a href="#docs-stages-03-stories-and-sizing" data-nav="docs-stages-03-stories-and-sizing">3. Stories and sizing</a></li><li><a href="#docs-stages-04-build" data-nav="docs-stages-04-build">4. Build</a></li><li><a href="#docs-stages-05-verification" data-nav="docs-stages-05-verification">5. Verification</a></li><li><a href="#docs-stages-06-release" data-nav="docs-stages-06-release">6. Release</a></li></ul></div>
-<div class="group"><h2>Agents</h2><ul><li><a href="#agents-brief-coach" data-nav="agents-brief-coach">brief-coach</a></li><li><a href="#agents-workshop-context-pack" data-nav="agents-workshop-context-pack">workshop-context-pack</a></li><li><a href="#agents-workshop-scribe" data-nav="agents-workshop-scribe">workshop-scribe</a></li><li><a href="#agents-workshop-challenger" data-nav="agents-workshop-challenger">workshop-challenger</a></li><li><a href="#agents-design-note-writer" data-nav="agents-design-note-writer">design-note-writer</a></li><li><a href="#agents-design-attacker" data-nav="agents-design-attacker">design-attacker</a></li><li><a href="#agents-story-writer" data-nav="agents-story-writer">story-writer</a></li><li><a href="#agents-right-size-checker" data-nav="agents-right-size-checker">right-size-checker</a></li><li><a href="#agents-test-author" data-nav="agents-test-author">test-author</a></li><li><a href="#agents-adversarial-reviewer" data-nav="agents-adversarial-reviewer">adversarial-reviewer</a></li><li><a href="#agents-release-verifier" data-nav="agents-release-verifier">release-verifier</a></li><li><a href="#agents--template" data-nav="agents--template">&lt;agent-name&gt;</a></li></ul></div>
+<div class="group"><h2>Agents</h2><ul><li><a href="#agents-brief-coach" data-nav="agents-brief-coach">brief-coach</a></li><li><a href="#agents-backlog-watcher" data-nav="agents-backlog-watcher">backlog-watcher</a></li><li><a href="#agents-workshop-context-pack" data-nav="agents-workshop-context-pack">workshop-context-pack</a></li><li><a href="#agents-workshop-scribe" data-nav="agents-workshop-scribe">workshop-scribe</a></li><li><a href="#agents-workshop-challenger" data-nav="agents-workshop-challenger">workshop-challenger</a></li><li><a href="#agents-design-note-writer" data-nav="agents-design-note-writer">design-note-writer</a></li><li><a href="#agents-design-attacker" data-nav="agents-design-attacker">design-attacker</a></li><li><a href="#agents-story-writer" data-nav="agents-story-writer">story-writer</a></li><li><a href="#agents-right-size-checker" data-nav="agents-right-size-checker">right-size-checker</a></li><li><a href="#agents-readiness-checker" data-nav="agents-readiness-checker">readiness-checker</a></li><li><a href="#agents-test-author" data-nav="agents-test-author">test-author</a></li><li><a href="#agents-adversarial-reviewer" data-nav="agents-adversarial-reviewer">adversarial-reviewer</a></li><li><a href="#agents-release-verifier" data-nav="agents-release-verifier">release-verifier</a></li><li><a href="#agents--template" data-nav="agents--template">&lt;agent-name&gt;</a></li></ul></div>
 <div class="group"><h2>Running it</h2><ul><li><a href="#docs-adoption" data-nav="docs-adoption">Adoption</a></li><li><a href="#docs-metrics" data-nav="docs-metrics">Metrics</a></li></ul></div>
 <div class="group"><h2>Templates</h2><ul><li><a href="#templates-opportunity-brief" data-nav="templates-opportunity-brief">Opportunity brief: &lt;title&gt;</a></li><li><a href="#templates-story-map" data-nav="templates-story-map">Story map: &lt;title&gt;</a></li><li><a href="#templates-domain-context" data-nav="templates-domain-context">Domain context: &lt;industry or product space&gt;</a></li></ul></div>
     </div>
@@ -135,7 +135,7 @@ tr:last-child td { border-bottom: 0; }
 <ul><li>the <strong>test author</strong> (stage 5), to write independent tests</li><li>the <strong>adversarial reviewer</strong> (stage 5), to judge the change against the spec</li><li>the <strong>release verifier</strong> (stage 6), to build post-deploy checks</li></ul>
 <p>If the criteria are weak, all three are weak. Investment in stages 1 to 3 pays back at the end.</p>
 <h2 id="docs-lifecycle--human-gates">Human gates</h2>
-<div class="tablewrap"><table><thead><tr><th>After</th><th>Gate</th><th>Decided by</th></tr></thead><tbody><tr><td>Stage 1</td><td>Brief is an opportunity statement, ready for the workshop</td><td>Product manager, after the brief-coach's independent review</td></tr><tr><td>Stage 2</td><td>Design note accepted</td><td>The squad, after the challenger's and design-attacker's independent reviews</td></tr><tr><td>Stage 3</td><td>Breakdown, size, scope</td><td>Engineering and product</td></tr><tr><td>Stage 4</td><td>Pull request opened</td><td>Owning engineer</td></tr><tr><td>Stage 5</td><td>Merge</td><td>Reviewer with merge authority</td></tr><tr><td>Stage 6</td><td>Go / no-go on ambiguous signals</td><td>Release owner</td></tr></tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th>After</th><th>Gate</th><th>Decided by</th></tr></thead><tbody><tr><td>Stage 1</td><td>Brief is an opportunity statement, ready for the workshop</td><td>Product manager, after the brief-coach's independent review</td></tr><tr><td>Stage 2</td><td>Design note accepted</td><td>The squad, after the challenger's and design-attacker's independent reviews</td></tr><tr><td>Stage 3</td><td>Stories accepted (scope, priority, acceptance criteria); estimates and sizes accepted</td><td>Product for the stories; engineering for the estimates, after the right-size-checker's review. Then the readiness-checker confirms every story is estimated and has acceptance criteria before it moves to build</td></tr><tr><td>Stage 4</td><td>Pull request opened</td><td>Owning engineer</td></tr><tr><td>Stage 5</td><td>Merge</td><td>Reviewer with merge authority</td></tr><tr><td>Stage 6</td><td>Go / no-go on ambiguous signals</td><td>Release owner</td></tr></tbody></table></div>
 </section>
 <section class="doc" id="docs-stages-01-opportunity-brief" data-file="docs/stages/01-opportunity-brief.md">
 <p class="path">docs/stages/01-opportunity-brief.md</p>
@@ -143,6 +143,8 @@ tr:last-child td { border-bottom: 0; }
 <ul><li><strong>Human owner:</strong> The product manager</li><li><strong>Agents:</strong> <a href="#agents-brief-coach">brief-coach</a></li><li><strong>Output:</strong> a completed <a href="#templates-opportunity-brief">opportunity brief</a> and a basic <a href="#templates-story-map">story map</a> of the customer need, from starting state to completed opportunity</li></ul>
 <h2 id="docs-stages-01-opportunity-brief--purpose">Purpose</h2>
 <p>Capture the customer opportunity, the outcome that matters, and the constraints - without prescribing a solution. An opportunity does not have to be a problem to solve. It can be a pure benefit the customer would value.</p>
+<h2 id="docs-stages-01-opportunity-brief--work-that-arrives-outside-the-process">Work that arrives outside the process</h2>
+<p>Ideas and requests do not always arrive through this stage. A stakeholder, a support ticket or a colleague may add an item straight into the product backlog. The <a href="#agents-backlog-watcher">backlog-watcher</a> looks for these and brings them to the product manager with suggestions: link the item to an existing opportunity, start a new opportunity brief, merge it as a duplicate, take the fast route for a genuine bug, park it, or decline it with a reason. The product manager decides. The aim is that good ideas are not lost and that everything in the backlog traces back to a customer opportunity.</p>
 <h2 id="docs-stages-01-opportunity-brief--goal">Goal</h2>
 <p>Work out what the customer actually needs or would value. The opportunity may be a problem to solve, such as customers dropping out of a process, or a pure benefit, such as a capability they would use and value. Gathering information for the brief is an investigation, not a specification exercise: the output is an evidence-backed statement of the customer's opportunity, and nothing about how to deliver it.</p>
 <h2 id="docs-stages-01-opportunity-brief--finding-the-opportunity">Finding the opportunity</h2>
@@ -224,18 +226,28 @@ tr:last-child td { border-bottom: 0; }
 <section class="doc" id="docs-stages-03-stories-and-sizing" data-file="docs/stages/03-stories-and-sizing.md">
 <p class="path">docs/stages/03-stories-and-sizing.md</p>
 <h1>Stage 3: Stories and sizing</h1>
-<ul><li><strong>Human owners:</strong> Product (scope, priority), Engineering (breakdown, sizing)</li><li><strong>Agents:</strong> <a href="#agents-story-writer">story-writer</a>, <a href="#agents-right-size-checker">right-size-checker</a></li><li><strong>Output:</strong> initiatives, epics and stories, each with testable acceptance criteria and a trace to the story map</li></ul>
+<ul><li><strong>Human owners:</strong> Product (story writing), Engineering (estimation). The whole squad takes part in the refinement and estimation session.</li><li><strong>Agents:</strong> <a href="#agents-story-writer">story-writer</a>, <a href="#agents-right-size-checker">right-size-checker</a>, <a href="#agents-test-author">test-author</a>, <a href="#agents-readiness-checker">readiness-checker</a></li><li><strong>Output:</strong> initiatives, epics and stories, each with testable acceptance criteria and a trace to the story map, refined and estimated by the squad</li></ul>
 <h2 id="docs-stages-03-stories-and-sizing--purpose">Purpose</h2>
-<p>Turn the story map and design note into a roadmap the team can build, without hand-writing tickets.</p>
+<p>Turn the story map and design note into a roadmap the squad can build, without hand-writing tickets.</p>
+<h2 id="docs-stages-03-stories-and-sizing--how-it-works">How it works</h2>
+<ol><li><strong>Write the stories.</strong> The product manager and the story-writer agent write the epics and stories together, with their acceptance criteria. Either can lead: the product manager can direct the agent, or the agent can draft and the product manager can shape it. Product owns the result.</li><li><strong>Refine and estimate, in one step.</strong> The whole squad meets once to refine and estimate. They read the stories, ask questions, tighten the acceptance criteria, estimate each story, and split any that are too big. Engineering owns the estimates. The right-size-checker reviews the sizing independently.</li></ol>
+<p>The test author is part of the squad, whether an agent or a person. In this session it checks that every acceptance criterion can be tested as written, flags those that cannot, and estimates the testing effort. A story cannot be estimated properly unless the squad knows how it will be tested, so this check happens here and not later.</p>
+<p>Refinement and estimation are a single step, not two. If the earlier stages went well, with the opportunity, the design and the success measures already agreed, the session should be fast. Squads also get faster at it over time as they refine their approach.</p>
+<p>Stories should rarely need splitting once a squad is practised at this. Splitting is more likely when a squad first forms, while its members learn to work together and to judge size alike. A squad that splits many stories after it has settled is a signal worth looking at: the stories may be written too large, or the earlier stages may have left something unclear.</p>
 <h2 id="docs-stages-03-stories-and-sizing--rules">Rules</h2>
-<ul><li>Every story traces to a step on the story map.</li><li>Every story has acceptance criteria that can be turned into a test. This is the thread the rest of the lifecycle reads.</li><li>The ways of measuring success agreed in <a href="#docs-stages-02-design-workshop">stage 2</a> are detailed here: how each measure is taken, and which stories and acceptance criteria check it.</li><li>Stories are small enough for one agent session and one reviewable pull request.</li></ul>
+<ul><li>Every story traces to a step on the story map.</li><li>Every story has acceptance criteria that can be turned into a test. This is the thread the rest of the lifecycle reads.</li><li>The ways of measuring success agreed in <a href="#docs-stages-02-design-workshop">stage 2</a> are detailed here: how each measure is taken, and which stories and acceptance criteria check it.</li><li>Every story fits into a single development iteration. See <a href="#docs-stages-03-stories-and-sizing--sizing">sizing</a>.</li></ul>
 <h2 id="docs-stages-03-stories-and-sizing--sizing">Sizing</h2>
-<p>This framework favours <strong>right-sizing</strong> over story points: a story is either small enough to fit the team's agreed cycle-time target or it is split. Forecasting uses throughput (stories finished per period), not point velocity. Right-sizing pairs well with agent-driven work because a story that is small enough to right-size is also small enough to complete in one session.</p>
-<p>The exact rule (target cycle time, how it is set, how splits are decided) should be defined by each team and documented here as the framework matures.</p>
+<p>This framework uses <strong>right-sizing</strong> in place of story points. Right-sizing means making sure a story can fit into a single development iteration. A story either fits, or it is split. Forecasting uses throughput (stories finished per iteration), not point velocity.</p>
+<p><strong>Iteration length.</strong> The squad chooses how long an iteration is, as short or as long as it wants. In practice, one to two weeks is recommended.</p>
+<p><strong>Why it still matters in the age of AI.</strong> Right-sizing can look like an anti-pattern now that agents make building faster. It is still necessary, for two reasons:</p>
+<ol><li><strong>Accurate roadmaps and delivery horizons.</strong> When every story fits into an iteration, the squad can forecast what will be delivered and when.</li><li><strong>Small increments of value.</strong> A squad focused on fitting everything into small iterations works in fast feedback loops. A squad that is not focused on this will not.</li></ol>
 <h2 id="docs-stages-03-stories-and-sizing--human-gate">Human gate</h2>
-<p>Engineering accepts the breakdown and the size. Product confirms scope and priority.</p>
+<p>At the end of the refinement session the squad accepts the stories as ready to build. Product accepts the scope, the priority and the acceptance criteria, once the test author confirms they can be tested. Engineering accepts the estimates and the sizes, after the right-size-checker's independent review.</p>
+<h2 id="docs-stages-03-stories-and-sizing--final-gate">Final gate</h2>
+<p>Before any story moves to build, the <a href="#agents-readiness-checker">readiness-checker</a> confirms that every story is estimated and has its acceptance criteria defined. A story that fails stays in refinement, and the agent says exactly what is missing. Where it has access, the agent also moves each story into the right state in the squad's tracking tool, such as Jira or Linear, so a story cannot reach build by being dragged across a board. Only a person can waive a failed check, and the reason is recorded.</p>
+<p>This gate checks that the stories are complete. It does not judge whether they are good. The squad's acceptance at the end of the refinement session does that.</p>
 <h2 id="docs-stages-03-stories-and-sizing--anti-patterns">Anti-patterns</h2>
-<ul><li>Acceptance criteria that describe implementation instead of behaviour</li><li>Stories generated from the raw brief rather than the map and design note</li><li>Sizing by point estimates that no one forecasts from</li></ul>
+<ul><li>Acceptance criteria that describe implementation instead of behaviour</li><li>Stories generated from the raw brief rather than the map and design note</li></ul>
 </section>
 <section class="doc" id="docs-stages-04-build" data-file="docs/stages/04-build.md">
 <p class="path">docs/stages/04-build.md</p>
@@ -354,6 +366,40 @@ List the open questions the workflow raised.</code></pre>
 <ul><li><strong>Confident but wrong about the industry.</strong> Requiring a source for every suggestion, and allowing "I don't know", is the main defence.</li><li><strong>Flattening the customer's voice</strong> into generic corporate language. It should preserve clear customer wording.</li><li><strong>Over-editing.</strong> Findings should be few and useful, not a rewrite of every sentence.</li><li><strong>A stale or biased domain context.</strong> Someone must own it and date it.</li></ul>
 <h2 id="agents-brief-coach--metrics">Metrics</h2>
 <ul><li>Findings accepted by the product manager, against findings rejected</li><li>Briefs an outside reader from the industry could follow, checked by spot test</li><li>Briefs accepted at the first workshop without being rewritten</li></ul>
+</section>
+<section class="doc" id="agents-backlog-watcher" data-file="agents/backlog-watcher.md">
+<p class="path">agents/backlog-watcher.md</p>
+<h1>backlog-watcher</h1>
+<p><strong>Stage:</strong> across the lifecycle (it watches the entry to <a href="#docs-stages-01-opportunity-brief">stage 1</a>) <strong>Status:</strong> idea</p>
+<h2 id="agents-backlog-watcher--purpose">Purpose</h2>
+<p>Looks for items that have been dropped into the product backlog outside this process, and highlights them to the product manager with suggestions on what to do. Its job is not to police people. It is to make sure nothing important is lost, and that everything in the backlog can be traced back to an opportunity.</p>
+<h2 id="agents-backlog-watcher--why-it-exists">Why it exists</h2>
+<p>Work arrives from many directions: a stakeholder's request, a support ticket, an idea from sales, an engineer's quick note. Some of it is valuable. If it goes straight into the backlog, it skips the opportunity brief, the design and the success measures, and it breaks the trace from each story back to the customer need.</p>
+<h2 id="agents-backlog-watcher--inputs">Inputs</h2>
+<ul><li>Read access to the product backlog, in whatever tool the squad uses</li><li>The opportunity briefs and story maps, so it can tell which items trace to one</li><li>The items it has already flagged and what the product manager decided</li></ul>
+<h2 id="agents-backlog-watcher--what-counts-as-outside-the-process">What counts as "outside the process"</h2>
+<ul><li>No link to an opportunity brief or a step on a story map</li><li>Created directly in a ready or build state, skipping refinement</li><li>Written as a solution, for example "add an API for X", with no stated customer need</li><li>A likely duplicate of something already in the backlog</li><li>Added by someone outside the squad, with no conversation recorded</li></ul>
+<p>A genuine bug or an urgent incident is not a failure of process. The agent should recognise these and suggest the fast route instead of flagging them as a problem.</p>
+<h2 id="agents-backlog-watcher--outputs">Outputs</h2>
+<p>A short digest for the product manager, daily or weekly depending on the volume. For each flagged item:</p>
+<ul><li>what it is, who added it and when</li><li>why it was flagged</li><li>a suggestion and the reason for it</li></ul>
+<p><strong>Suggestions it can make</strong></p>
+<ol><li><strong>Belongs to an existing opportunity:</strong> link it to that brief or story map step.</li><li><strong>A new opportunity:</strong> start an opportunity brief, with the item as the first evidence.</li><li><strong>A duplicate:</strong> merge it with the existing item.</li><li><strong>A bug or urgent fix:</strong> take the fast route, with a note of why.</li><li><strong>Not now:</strong> park it with a reason, and say when to look again.</li><li><strong>Decline:</strong> decline it with a reason, and reply to the person who raised it.</li></ol>
+<h2 id="agents-backlog-watcher--human-gate">Human gate</h2>
+<p>The product manager decides what happens to every flagged item. The agent never moves, edits, deletes or closes an item on its own.</p>
+<h2 id="agents-backlog-watcher--safeguards">Safeguards</h2>
+<ul><li><strong>Read-only by default.</strong> If the squad chooses, it may add a label such as "outside process" and a comment, and nothing more.</li><li><strong>Courteous.</strong> Anyone who raised an item should get an acknowledgement and an answer. The agent can draft one for the product manager to send.</li><li><strong>Private.</strong> Backlog items can contain customer details, so it works only inside the organisation's own systems.</li></ul>
+<h2 id="agents-backlog-watcher--draft-prompt">Draft prompt</h2>
+<pre><code>You watch a product backlog on behalf of the product manager. Find items that were added outside the agreed process, meaning they have no link to an opportunity brief or story map step, were created straight into a ready or build state, are written as a solution with no stated customer need, are likely duplicates, or were added by someone outside the squad with no discussion recorded.
+
+Do not treat a genuine bug or urgent incident as a problem. Suggest the fast route for those.
+
+For each flagged item give: what it is, who added it and when, why you flagged it, and one suggestion with the reason: link it to an existing opportunity, start a new opportunity brief, merge it as a duplicate, take the fast route, park it, or decline it.
+Be courteous. Never change, move, delete or close an item. Keep the digest short.</code></pre>
+<h2 id="agents-backlog-watcher--failure-modes">Failure modes</h2>
+<ul><li><strong>False positives,</strong> such as flagging legitimate bugs or small fixes. That makes people ignore it.</li><li><strong>Becoming a policing tool,</strong> so people hide requests or stop raising them. Courtesy and a clear route for good ideas are the defence.</li><li><strong>Only seeing the tracking tool.</strong> Requests that arrive by email or chat never reach the backlog, so it cannot see them.</li><li><strong>A weak trace.</strong> If briefs and story maps are not linked to backlog items, everything looks outside the process.</li></ul>
+<h2 id="agents-backlog-watcher--metrics">Metrics</h2>
+<ul><li>Items flagged per period, and the share the product manager acted on</li><li>Time from an item being added to a decision on it</li><li>Items that end up as an opportunity brief, against items declined or parked</li></ul>
 </section>
 <section class="doc" id="agents-workshop-context-pack" data-file="agents/workshop-context-pack.md">
 <p class="path">agents/workshop-context-pack.md</p>
@@ -489,15 +535,17 @@ Do not produce working exploit code or operational attack instructions.</code></
 <section class="doc" id="agents-story-writer" data-file="agents/story-writer.md">
 <p class="path">agents/story-writer.md</p>
 <h1>story-writer</h1>
-<p><strong>Stage:</strong> 3 - Stories and sizing <strong>Status:</strong> in use (internal version); this spec generalises it</p>
+<p><strong>Stage:</strong> 3 - Stories and sizing <strong>Status:</strong> in use</p>
 <h2 id="agents-story-writer--purpose">Purpose</h2>
 <p>Builds initiatives, epics and stories from the story map and design note, each with testable acceptance criteria.</p>
 <h2 id="agents-story-writer--inputs">Inputs</h2>
 <p>Story map, design note, opportunity brief.</p>
 <h2 id="agents-story-writer--outputs">Outputs</h2>
 <p>A roadmap: initiatives, epics, stories. Each story has a trace to a map step and acceptance criteria written as observable behaviour.</p>
+<h2 id="agents-story-writer--how-the-pair-works">How the pair works</h2>
+<p>The product manager and the agent write the epics and stories together, and either can lead. The product manager can direct the agent, or the agent can draft and the product manager can shape it. Every so often the product manager writes a set of stories unaided and the agent reviews them, so the skill stays sharp. The squad then refines and estimates the stories together in a single step.</p>
 <h2 id="agents-story-writer--human-gate">Human gate</h2>
-<p>Product confirms scope and priority; engineering accepts breakdown and size.</p>
+<p>Product accepts the stories, including scope, priority and acceptance criteria. Estimation and sizing belong to engineering; see the right-size-checker.</p>
 <h2 id="agents-story-writer--draft-prompt">Draft prompt</h2>
 <pre><code>Create a roadmap from the story map and design note. Do not work from the brief alone.
 Every story must reference the map step it comes from.
@@ -514,28 +562,65 @@ List anything you cannot specify as an open question.</code></pre>
 <h1>right-size-checker</h1>
 <p><strong>Stage:</strong> 3 - Stories and sizing <strong>Status:</strong> idea</p>
 <h2 id="agents-right-size-checker--purpose">Purpose</h2>
-<p>Checks each story against the team's right-size rule and proposes splits for those that do not fit.</p>
+<p>Checks each story against the right-size rule, which is that a story must fit into a single development iteration, and proposes splits for those that do not fit.</p>
 <h2 id="agents-right-size-checker--inputs">Inputs</h2>
-<p>The stories, and the team's right-size rule (target cycle time and how it is applied). Optionally, historical cycle times.</p>
+<p>The stories, and the length of the squad's iteration (one to two weeks is recommended). Optionally, how long similar stories have taken before.</p>
 <h2 id="agents-right-size-checker--outputs">Outputs</h2>
 <p>Per story: fits / does not fit, the reason, and a proposed split with acceptance criteria for each part.</p>
+<h2 id="agents-right-size-checker--when-it-runs">When it runs</h2>
+<p>In the squad's refinement and estimation session, as an independent check on the sizing. The squad does the estimating, and the agent reviews it.</p>
 <h2 id="agents-right-size-checker--human-gate">Human gate</h2>
 <p>Engineering accepts or edits the result.</p>
 <h2 id="agents-right-size-checker--draft-prompt">Draft prompt</h2>
-<pre><code>Apply this right-size rule: &lt;team rule&gt;.
+<pre><code>Apply this right-size rule: a story fits if it can be completed within one development iteration of &lt;iteration length&gt;.
 For each story say whether it fits and why, using the acceptance criteria and known complexity.
 For those that do not, propose a split into stories that each fit, keeping the behaviour and acceptance criteria intact.</code></pre>
 <h2 id="agents-right-size-checker--failure-modes">Failure modes</h2>
 <ul><li>Splitting by technical layer instead of by observable behaviour.</li></ul>
 <h2 id="agents-right-size-checker--metrics">Metrics</h2>
-<p>Agreement rate with the team's own sizing; cycle time of stories it passed.</p>
+<p>Agreement rate with the squad's own sizing; the share of stories it passed that actually finished within the iteration. Also the share of stories it proposes to split. That should fall as the squad matures, because splits are mostly needed when a squad first forms. A rate that stays high suggests the stories are being written too large.</p>
+</section>
+<section class="doc" id="agents-readiness-checker" data-file="agents/readiness-checker.md">
+<p class="path">agents/readiness-checker.md</p>
+<h1>readiness-checker</h1>
+<p><strong>Stage:</strong> 3 - Stories and sizing (the final gate, before build) <strong>Status:</strong> idea</p>
+<h2 id="agents-readiness-checker--purpose">Purpose</h2>
+<p>Checks that every story is ready to move to build. A story is ready when it has been estimated and has its acceptance criteria defined. No story moves to build until it passes.</p>
+<p>This check is about completeness, not quality. The squad's own acceptance at the end of the refinement session is what judges whether the stories are good.</p>
+<h2 id="agents-readiness-checker--inputs">Inputs</h2>
+<p>The stories after the squad's refinement and estimation session, with their estimates and acceptance criteria.</p>
+<h2 id="agents-readiness-checker--outputs">Outputs</h2>
+<p>For each story: ready, or not ready, with exactly what is missing. A story that is not ready stays in refinement. The agent also gives a short summary: how many stories passed, and which did not. Where it has access to the squad's tracking tool, it also moves each story to the matching state.</p>
+<h2 id="agents-readiness-checker--moving-stories-to-the-right-state">Moving stories to the right state</h2>
+<p>The agent can also move the stories into the right state in the tool the squad tracks its work in, such as Jira or Linear.</p>
+<ul><li>A story that passes moves to the "ready for build" state.</li><li>A story that fails stays in, or goes back to, the refinement state, with a comment saying exactly what is missing.</li></ul>
+<p>This is what makes the gate real: a story cannot reach build just by being dragged across a board.</p>
+<p><strong>Safeguards.</strong> The agent changes only the state and adds its comment. It never edits a story's content, estimate or acceptance criteria. Every change it makes is recorded. Which tool, and which states mean "ready" and "refinement", come from the organisation's tool configuration, so the framework itself stays tool-neutral.</p>
+<h2 id="agents-readiness-checker--the-checks">The checks</h2>
+<ol><li><strong>Estimated.</strong> The squad has estimated the story, and the story fits into a single development iteration.</li><li><strong>Acceptance criteria defined.</strong> The story has acceptance criteria, they are real statements of behaviour and not placeholders such as "works as expected", and the test author has confirmed they can be tested.</li></ol>
+<p>A squad can add its own checks, such as a trace to the story map.</p>
+<h2 id="agents-readiness-checker--human-gate">Human gate</h2>
+<p>Only a person can waive a failed check, and the waiver is recorded with the reason. The agent blocks, and the accountable person decides whether to override. Waivers are counted, so a pattern of them shows up.</p>
+<h2 id="agents-readiness-checker--draft-prompt">Draft prompt</h2>
+<pre><code>Check whether each story is ready to move to build. A story is ready only if:
+- it has an estimate agreed by the squad, and it fits within one development iteration
+- it has acceptance criteria defined as observable behaviour, not placeholders, and the test author has confirmed they can be tested
+
+For each story say ready or not ready. For each story that is not ready, say exactly what is missing. Do not judge whether the story is a good one, only whether it is complete.
+Finish with a one-line summary: how many passed, and which did not.</code></pre>
+<h2 id="agents-readiness-checker--failure-modes">Failure modes</h2>
+<ul><li><strong>Checking that something exists, not that it means anything.</strong> A filled-in field with a vague placeholder is not a pass. The prompt asks for real statements of behaviour.</li><li><strong>Gaming it</strong> by filling in fields to get through. The test author's confirmation and the squad's acceptance are the defence.</li><li><strong>Becoming a bottleneck</strong> if it is slow or noisy. It should be fast and quiet when the stories are good.</li></ul>
+<h2 id="agents-readiness-checker--metrics">Metrics</h2>
+<ul><li>Share of stories that fail on the first check. It should fall as the squad matures.</li><li>Waivers granted, and why.</li><li>Stories found in build to have missing or untestable criteria that this check passed.</li></ul>
 </section>
 <section class="doc" id="agents-test-author" data-file="agents/test-author.md">
 <p class="path">agents/test-author.md</p>
 <h1>test-author</h1>
-<p><strong>Stage:</strong> 5 - Verification <strong>Status:</strong> idea</p>
+<p><strong>Stage:</strong> 3 - Stories and sizing (refinement and estimation), and 5 - Verification <strong>Status:</strong> idea</p>
 <h2 id="agents-test-author--purpose">Purpose</h2>
-<p>Writes acceptance tests from a story's criteria, independently of the implementation, standing in for a dedicated QA function.</p>
+<p>A member of the squad, either an agent or a person, who owns how the work will be tested. It stands in for a dedicated QA function.</p>
+<p><strong>At stage 3,</strong> it takes part in the squad's refinement and estimation session. It checks that every acceptance criterion can be tested as written, flags any that cannot, and estimates the testing effort. Without it the squad cannot estimate a story properly, because nobody knows how it will be tested.</p>
+<p><strong>At stage 5,</strong> it writes acceptance tests from the story's criteria, independently of the implementation.</p>
 <h2 id="agents-test-author--inputs">Inputs</h2>
 <p>The story and its acceptance criteria, and the public interfaces of the system. <strong>Not</strong> the implementation or the author's reasoning.</p>
 <h2 id="agents-test-author--outputs">Outputs</h2>
@@ -637,7 +722,7 @@ From these acceptance criteria, propose post-deploy checks that can run against 
 <h2 id="docs-metrics--quality">Quality</h2>
 <ul><li><strong>Escaped defects:</strong> defects found after release</li><li><strong>Change failure rate:</strong> releases that need a rollback or hotfix</li><li><strong>Rework rate:</strong> stories reopened or followed by a fix</li></ul>
 <h2 id="docs-metrics--flow">Flow</h2>
-<ul><li><strong>Lead time:</strong> brief accepted to running in production</li><li><strong>Cycle time:</strong> story started to done</li><li><strong>Throughput:</strong> stories finished per week</li><li><strong>Review wait time:</strong> pull request opened to first human review</li></ul>
+<ul><li><strong>Lead time:</strong> brief accepted to running in production</li><li><strong>Cycle time:</strong> story started to done</li><li><strong>Throughput:</strong> stories finished per week</li><li><strong>Review wait time:</strong> pull request opened to first human review</li><li><strong>Split rate:</strong> the share of stories split in refinement. It should fall as a squad matures</li></ul>
 <h2 id="docs-metrics--adoption">Adoption</h2>
 <ul><li>Share of pull requests that are agent-assisted, and their defect rate compared with the rest</li></ul>
 <h2 id="docs-metrics--agent-review">Agent review</h2>
@@ -748,7 +833,7 @@ From these acceptance criteria, propose post-deploy checks that can run against 
 <script>
 (function () {
   document.documentElement.classList.add('js');
-  var order = [{"id":"readme","title":"AI SDLC"},{"id":"docs-principles","title":"Principles"},{"id":"docs-lifecycle","title":"Lifecycle overview"},{"id":"docs-stages-01-opportunity-brief","title":"1. Opportunity brief"},{"id":"docs-stages-02-design-workshop","title":"2. Design workshop"},{"id":"docs-stages-03-stories-and-sizing","title":"3. Stories and sizing"},{"id":"docs-stages-04-build","title":"4. Build"},{"id":"docs-stages-05-verification","title":"5. Verification"},{"id":"docs-stages-06-release","title":"6. Release"},{"id":"agents-brief-coach","title":"brief-coach"},{"id":"agents-workshop-context-pack","title":"workshop-context-pack"},{"id":"agents-workshop-scribe","title":"workshop-scribe"},{"id":"agents-workshop-challenger","title":"workshop-challenger"},{"id":"agents-design-note-writer","title":"design-note-writer"},{"id":"agents-design-attacker","title":"design-attacker"},{"id":"agents-story-writer","title":"story-writer"},{"id":"agents-right-size-checker","title":"right-size-checker"},{"id":"agents-test-author","title":"test-author"},{"id":"agents-adversarial-reviewer","title":"adversarial-reviewer"},{"id":"agents-release-verifier","title":"release-verifier"},{"id":"agents--template","title":"<agent-name>"},{"id":"docs-adoption","title":"Adoption"},{"id":"docs-metrics","title":"Metrics"},{"id":"templates-opportunity-brief","title":"Opportunity brief: <title>"},{"id":"templates-story-map","title":"Story map: <title>"},{"id":"templates-domain-context","title":"Domain context: <industry or product space>"}];
+  var order = [{"id":"readme","title":"AI SDLC"},{"id":"docs-principles","title":"Principles"},{"id":"docs-lifecycle","title":"Lifecycle overview"},{"id":"docs-stages-01-opportunity-brief","title":"1. Opportunity brief"},{"id":"docs-stages-02-design-workshop","title":"2. Design workshop"},{"id":"docs-stages-03-stories-and-sizing","title":"3. Stories and sizing"},{"id":"docs-stages-04-build","title":"4. Build"},{"id":"docs-stages-05-verification","title":"5. Verification"},{"id":"docs-stages-06-release","title":"6. Release"},{"id":"agents-brief-coach","title":"brief-coach"},{"id":"agents-backlog-watcher","title":"backlog-watcher"},{"id":"agents-workshop-context-pack","title":"workshop-context-pack"},{"id":"agents-workshop-scribe","title":"workshop-scribe"},{"id":"agents-workshop-challenger","title":"workshop-challenger"},{"id":"agents-design-note-writer","title":"design-note-writer"},{"id":"agents-design-attacker","title":"design-attacker"},{"id":"agents-story-writer","title":"story-writer"},{"id":"agents-right-size-checker","title":"right-size-checker"},{"id":"agents-readiness-checker","title":"readiness-checker"},{"id":"agents-test-author","title":"test-author"},{"id":"agents-adversarial-reviewer","title":"adversarial-reviewer"},{"id":"agents-release-verifier","title":"release-verifier"},{"id":"agents--template","title":"<agent-name>"},{"id":"docs-adoption","title":"Adoption"},{"id":"docs-metrics","title":"Metrics"},{"id":"templates-opportunity-brief","title":"Opportunity brief: <title>"},{"id":"templates-story-map","title":"Story map: <title>"},{"id":"templates-domain-context","title":"Domain context: <industry or product space>"}];
   var docs = {};
   document.querySelectorAll('.doc').forEach(function (d) { docs[d.id] = d; });
   var links = document.querySelectorAll('[data-nav]');

@@ -1,10 +1,14 @@
 # test-author
 
-**Stage:** 5 - Verification
+**Stage:** 3 - Stories and sizing (refinement and estimation), and 5 - Verification
 **Status:** idea
 
 ## Purpose
-Writes acceptance tests from a story's criteria, independently of the implementation, standing in for a dedicated QA function.
+A member of the squad, either an agent or a person, who owns how the work will be tested. It stands in for a dedicated QA function.
+
+**At stage 3,** it takes part in the squad's refinement and estimation session. It checks that every acceptance criterion can be tested as written, flags any that cannot, and estimates the testing effort. Without it the squad cannot estimate a story properly, because nobody knows how it will be tested.
+
+**At stage 5,** it writes acceptance tests from the story's criteria, independently of the implementation.
 
 ## Inputs
 The story and its acceptance criteria, and the public interfaces of the system. **Not** the implementation or the author's reasoning.
