@@ -13,6 +13,16 @@ AI enhances the speed of writing code. That moves the constraint to two places:
 
 This framework rebalances the lifecycle around those two ends. It is not a coding-assistant rollout; it is a way of working, in which people and agents do each stage together and the accountable person decides.
 
+## Scope
+
+**What it covers.** How people and agents work together across a delivery lifecycle: the principles, six stages, the agents that help at each one, and the templates and metrics that go with them. It is about what changes when agents do much of the work.
+
+**What it does not cover.** It does not teach story mapping, agile delivery, threat modelling or security testing. Where the framework relies on an established practice, it says in a line or two what the practice is for and points to a good source, and does not re-teach it.
+
+**Where it is useful.** In the delivery of software, data, and AI products or projects.
+
+**Tool-neutral.** Agent specs describe what an agent does, not which product runs it. Tools such as Jira, Linear or Miro appear only as examples.
+
 ## The lifecycle
 
 | # | Stage | Human owns | Agents help with |
