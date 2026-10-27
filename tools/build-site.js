@@ -16,10 +16,10 @@ const groups = [
     'agents/brief-coach.md', 'agents/backlog-watcher.md', 'agents/workshop-context-pack.md',
     'agents/workshop-scribe.md', 'agents/workshop-challenger.md', 'agents/design-note-writer.md',
     'agents/design-attacker.md', 'agents/story-writer.md', 'agents/right-size-checker.md',
-    'agents/readiness-checker.md', 'agents/test-author.md', 'agents/adversarial-reviewer.md',
+    'agents/readiness-checker.md', 'agents/security-agent.md', 'agents/test-author.md', 'agents/adversarial-reviewer.md',
     'agents/release-verifier.md', 'agents/_template.md'] },
   { name: 'Running it', files: ['docs/adoption.md', 'docs/metrics.md'] },
-  { name: 'Templates', files: ['templates/opportunity-brief.md', 'templates/story-map.md', 'templates/domain-context.md'] },
+  { name: 'Templates', files: ['templates/opportunity-brief.md', 'templates/story-map.md', 'templates/test-scenario.md', 'templates/domain-context.md'] },
 ];
 
 const idOf = (f) => (f === 'README.md' ? 'readme' : f.replace(/\.md$/, '').replace(/[\/_]/g, '-').replace(/^-+/, ''));
