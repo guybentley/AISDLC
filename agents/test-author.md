@@ -8,6 +8,8 @@ A member of the squad, either an agent or a person, who owns how the work will b
 
 **At stage 3,** it takes part in the squad's refinement and estimation session. It checks that every acceptance criterion can be tested as written, flags any that cannot, and estimates the testing effort. Without it the squad cannot estimate a story properly, because nobody knows how it will be tested.
 
+**Also at stage 3,** for stories with a user-facing change, it drafts the [test scenarios](../templates/test-scenario.md): plain-language instructions that a test agent, or a person, can run through to test a story the way a real user would. The agent drafts example scenarios from the acceptance criteria and the brief's workflows and unhappy paths. The product manager, or someone else in the squad, then validates with a regular user of the system that they match real use. The scenarios are an extension of the acceptance criteria and exist to raise the quality of what the build stage produces. They are not a basis for future automation, because an agent's run is not guaranteed to repeat.
+
 **At stage 5,** it writes acceptance tests from the story's criteria, independently of the implementation.
 
 ## Inputs

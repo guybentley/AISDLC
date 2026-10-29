@@ -4,7 +4,7 @@
 **Status:** idea
 
 ## Purpose
-Checks that every story is ready to move to build. A story is ready when it has been estimated and has its acceptance criteria defined. No story moves to build until it passes.
+Checks that every story is ready to move to build. A story is ready when it has been estimated and has its acceptance criteria defined, and, for a story with a user-facing change, its test scenarios have been validated. No story moves to build until it passes.
 
 This check is about completeness, not quality. The squad's own acceptance at the end of the refinement session is what judges whether the stories are good.
 
@@ -26,6 +26,8 @@ This is what makes the gate real: a story cannot reach build just by being dragg
 ## The checks
 1. **Estimated.** The squad has estimated the story, and the story fits into a single development iteration.
 2. **Acceptance criteria defined.** The story has acceptance criteria, they are real statements of behaviour and not placeholders such as "works as expected", and the test author has confirmed they can be tested.
+
+3. **Test scenarios, for a story with a user-facing change.** The [test scenarios](../templates/test-scenario.md) exist and have been validated with a regular user of the system. A story with no user-facing change does not need them.
 
 A squad can add its own checks, such as a trace to the story map.
 

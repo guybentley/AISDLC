@@ -2,7 +2,7 @@
 
 - **Human owners:** Product (story writing), Engineering (estimation). The whole squad takes part in the refinement and estimation session.
 - **Agents:** [story-writer](../../agents/story-writer.md), [right-size-checker](../../agents/right-size-checker.md), [test-author](../../agents/test-author.md), [readiness-checker](../../agents/readiness-checker.md)
-- **Output:** initiatives, epics and stories, each with testable acceptance criteria and a trace to the story map, refined and estimated by the squad
+- **Output:** initiatives, epics and stories, each with testable acceptance criteria and a trace to the story map, refined and estimated by the squad. Also test scenarios for stories with a user-facing change: instructions for a test agent to run through.
 
 ## Purpose
 
@@ -14,6 +14,8 @@ Turn the story map and design note into a roadmap the squad can build, without h
 2. **Refine and estimate, in one step.** The whole squad meets once to refine and estimate. They read the stories, ask questions, tighten the acceptance criteria, estimate each story, and split any that are too big. Engineering owns the estimates. The right-size-checker reviews the sizing independently.
 
 The test author is part of the squad, whether an agent or a person. In this session it checks that every acceptance criterion can be tested as written, flags those that cannot, and estimates the testing effort. A story cannot be estimated properly unless the squad knows how it will be tested, so this check happens here and not later.
+
+3. **Draft the test scenarios, for stories with a user-facing change.** A story has a user-facing change when a user of the system can see or do something different afterwards. For those stories only, the squad also produces an additional artefact: instructions for a test agent to run through, as [test scenarios](../../templates/test-scenario.md). The scenarios are an extension of the acceptance criteria, and their purpose is to raise the quality of what comes out of the build stage. This can be agent-led. The test author, an agent or a person, drafts example scenarios from the acceptance criteria and the brief's workflows and unhappy paths. The product manager, or someone else in the squad, then validates with a regular user of the system that the scenarios match how people really use it. A test agent that simulates a user runs through them to check what the build produces. They are not a basis for future automation, because an agent's run is not guaranteed to repeat. The lasting automated tests come from the acceptance criteria.
 
 Refinement and estimation are a single step, not two. If the earlier stages went well, with the opportunity, the design and the success measures already agreed, the session should be fast. Squads also get faster at it over time as they refine their approach.
 
@@ -43,7 +45,7 @@ At the end of the refinement session the squad accepts the stories as ready to b
 
 ## Final gate
 
-Before any story moves to build, the [readiness-checker](../../agents/readiness-checker.md) confirms that every story is estimated and has its acceptance criteria defined. A story that fails stays in refinement, and the agent says exactly what is missing. Where it has access, the agent also moves each story into the right state in the squad's tracking tool, such as Jira or Linear, so a story cannot reach build by being dragged across a board. Only a person can waive a failed check, and the reason is recorded.
+Before any story moves to build, the [readiness-checker](../../agents/readiness-checker.md) confirms that every story is estimated and has its acceptance criteria defined. For a story with a user-facing change, it also confirms that the test scenarios exist and have been validated. A story that fails stays in refinement, and the agent says exactly what is missing. Where it has access, the agent also moves each story into the right state in the squad's tracking tool, such as Jira or Linear, so a story cannot reach build by being dragged across a board. Only a person can waive a failed check, and the reason is recorded.
 
 This gate checks that the stories are complete. It does not judge whether they are good. The squad's acceptance at the end of the refinement session does that.
 
