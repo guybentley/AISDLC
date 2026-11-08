@@ -9,7 +9,7 @@ An open framework for running a software delivery lifecycle as a partnership: en
 AI enhances the speed of writing code. That moves the constraint to two places:
 
 1. **Specifying what to build** - a clear customer opportunity, a shared design, testable acceptance criteria.
-2. **Verifying what was built** - independent tests, adversarial review, safe release.
+2. **Verifying what was built** - adversarial review, a different engineer testing by hand, safe release.
 
 This framework rebalances the lifecycle around those two ends. It is not a coding-assistant rollout; it is a way of working, in which people and agents do each stage together and the accountable person decides.
 
@@ -30,8 +30,8 @@ This framework rebalances the lifecycle around those two ends. It is not a codin
 | 1 | [Opportunity brief](docs/stages/01-opportunity-brief.md) | Customer opportunity, outcomes, constraints | Stripping solution detail, finding gaps |
 | 2 | [Design workshop](docs/stages/02-design-workshop.md) | The design, decisions, trade-offs | Context, scribing, challenge, stack checks |
 | 3 | [Stories and sizing](docs/stages/03-stories-and-sizing.md) | Scope and priority | Story writing, acceptance criteria, size checks |
-| 4 | [Build](docs/stages/04-build.md) | The pull request | Implementation |
-| 5 | [Verification](docs/stages/05-verification.md) | Merge decision | Independent tests, adversarial review |
+| 4 | [Build](docs/stages/04-build.md) | The pull request | Implementation, security steering, adversarial review |
+| 5 | [Verification](docs/stages/05-verification.md) | Merge decision | Checking everything is in place before merge |
 | 6 | [Release](docs/stages/06-release.md) | Go / rollback decisions | Plan summaries, post-deploy checks |
 
 Acceptance criteria written at stage 3 are the thread: the test author, the reviewer and the release verifier all read them.

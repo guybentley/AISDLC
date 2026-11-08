@@ -7,6 +7,14 @@ Baseline these before changing anything.
 - **Change failure rate:** releases that need a rollback or hotfix
 - **Rework rate:** stories reopened or followed by a fix
 
+## Evidence recorded with each change
+The [verification-checker](../agents/verification-checker.md) records these at stage 5. They are evidence and not targets, and they can feed a dashboard later.
+- **Unit test coverage:** the percentage of code covered
+- **Tests:** the number of automated tests and integration tests
+- **Security flaws:** found, and how many were fixed
+- **Adversarial review findings:** raised, and how each was answered
+- **Time in review**
+
 ## Flow
 - **Lead time:** brief accepted to running in production
 - **Cycle time:** story started to done
