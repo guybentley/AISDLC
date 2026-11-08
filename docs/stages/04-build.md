@@ -1,7 +1,7 @@
 # Stage 4: Build
 
 - **Human owner:** The engineer who owns the story
-- **Agents:** a coding agent of your choice, the [security-agent](../../agents/security-agent.md), and the [adversarial-reviewer](../../agents/adversarial-reviewer.md)
+- **Agents:** a coding agent of your choice, a separate [test-author](../../agents/test-author.md) agent for the tests, the [security-agent](../../agents/security-agent.md), and the [adversarial-reviewer](../../agents/adversarial-reviewer.md)
 - **Output:** a pull request that includes the code, its automated tests and integration tests, and the deployment plan and scripts
 
 ## Purpose
@@ -30,7 +30,8 @@ This is different from the security agent. The security agent steers while the c
 ## Requirements
 
 - **Repository context.** Each repository holds an agent instruction file, architecture decisions and conventions so the agent works from the same standards as the squad. Keep shared standards in one file that multiple tools can read.
-- **Tests and deployment come with the code.** The coding agent or the engineer also builds the automated tests, the integration tests, and the deployment plan and scripts as part of the story, not afterwards. Independent acceptance tests are written separately at [stage 5](05-verification.md), and the deployment plan is what [stage 6](06-release.md) uses to release.
+- **Tests and deployment come with the code.** The automated tests and integration tests are built during the build, not afterwards, by a separate agent from the one writing the code. That separation makes them independent. The test agent is paired with a human: the SDET where the squad has one, and otherwise the engineer who owns the story. About one set of tests in every three or four, that human writes them themselves and the agent reviews, as with the code. The coding agent or the engineer builds the deployment plan and scripts. The tests are checked as part of the review at [stage 5](05-verification.md), and the deployment plan is what [stage 6](06-release.md) uses to release.
+- **A lower bar of independent review for tests.** Automated tests and integration tests are not customer-facing and can be a little more fragile than the feature. One human paired with an agent is enough, with no second reviewer of the tests.
 - **Small pull requests.** One story, one reviewable change.
 - **The engineer owns the result.** "The agent wrote it" is never a defence.
 
@@ -42,6 +43,6 @@ The engineer opens the pull request only when they would be comfortable defendin
 
 - Large agent-generated pull requests nobody reads
 - Each repository's agent instructions drift apart by accident, so the same standards are applied differently
-- Relying only on tests written by whoever wrote the code, with no independent tests at stage 5
+- Letting the coding agent write the tests for its own code
 - Opening a pull request while the automated checks are failing
 - Approving a change you cannot explain, including what it does and why
