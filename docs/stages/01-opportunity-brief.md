@@ -121,6 +121,7 @@ The backbone is a draft. The team can rename, reorder, add or remove anything on
 - Basic customer workflows, from start to finish, in the customer's terms
 - What happens when things go wrong: the unhappy paths, including how a customer challenges an automated decision
 - Constraints: cost, time, compliance, performance, dependencies
+- How customers can take releases: as soon as ready, at the end of an iteration, or on a set schedule, and any contract or regulation behind it. This sets the [release pattern](06-release.md#release-patterns) for stage 6
 - The kinds of sensitive data involved, such as personal data or payment card details, and the countries it will be used in and any specific laws that apply there
 - What is explicitly out of scope
 - Open questions

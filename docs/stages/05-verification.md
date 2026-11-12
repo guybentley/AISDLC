@@ -21,6 +21,8 @@ A different engineer from the one who built the change reviews the small change 
 
 The manual test is not documented and does not follow a script. A scripted test can be run by an agent, so the human adds value by using the feature as a customer or user would, freely, and noticing what a script would not.
 
+The reviewer also checks that the change can be watched in production: that it emits the signals [stage 6](06-release.md) will rely on, and that they would actually show a problem.
+
 The engineer who owns the story owns the feature and is accountable for it delivering what the customer needs. Automated checks cannot confirm that on their own, which is why the reviewer tries the feature the way the customer would, against the story's acceptance criteria and the outcome in the brief.
 
 ## Engineers as each other's QA
@@ -43,6 +45,7 @@ Before the reviewing engineer decides on merge, the [verification-checker](../..
 - the automated tests and integration tests exist, cover the acceptance criteria, and pass
 - the adversarial review was carried out, and every finding has an answer
 - the security review was carried out, and the security scanners pass
+- observability is in place: the change emits the logs, metrics, traces and alerts that the release monitors and the brief's success measures need, and no sensitive data is written to the logs
 
 Anything missing keeps the change in review, and the agent says exactly what is missing. Only a person can waive a failed check, and the reason is recorded. The check is about completeness and not quality. The code review and the manual test judge quality, and an AI's check never counts as a human approval. The adversarial review itself is part of the build: see [stage 4](04-build.md#adversarial-code-review).
 
@@ -62,3 +65,4 @@ Escaped defects, defects found in review that the automated checks missed, time 
 - A manual test that follows a written script
 - Reviewing with the agent's summary in hand, so it anchors the review
 - Treating an AI's check as an approval
+- Passing a change that emits no signals, because nothing can then tell whether the release is working

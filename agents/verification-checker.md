@@ -4,7 +4,7 @@
 **Status:** idea
 
 ## Purpose
-Makes sure everything needed is in place before the reviewing engineer decides on merge. It confirms that the earlier checks really happened: the unit tests, the adversarial review and the security review.
+Makes sure everything needed is in place before the reviewing engineer decides on merge. It confirms that the earlier checks really happened: the unit tests, the adversarial review, the security review and the observability.
 
 This check is about completeness, not quality. The reviewing engineer's code review and manual test are what judge whether the change is good. It is the stage 5 counterpart to the [readiness-checker](readiness-checker.md) at the end of stage 3.
 
@@ -15,6 +15,7 @@ The change and the record of what was done on it at stage 4: the tests, the adve
 1. **Unit tests.** The automated tests, including the integration tests, exist, cover the story's acceptance criteria, and pass.
 2. **Adversarial review.** The adversarial review of the change was carried out, and every finding has an answer from the engineer: fixed, or rebutted with evidence.
 3. **Security review.** The security review was carried out, and the security scanners pass.
+4. **Observability.** The change emits the logs, metrics, traces and alerts that the release monitors and the brief's success measures need, and no sensitive data is written to the logs.
 
 A squad can add its own checks, such as a scenario run for a story with a user-facing change.
 
@@ -24,6 +25,7 @@ As well as checking, the agent measures the evidence for each change and documen
 - the number of automated tests and integration tests
 - the number of security flaws found, and how many were fixed
 - the number of adversarial review findings, and how each was answered
+- which signals the change emits for the release monitors
 - how long the change spent in review
 
 These are recorded as evidence, not set as targets. A coverage figure is easy to push up without making the tests any better, so the agent reports it and the trend over time, and does not fail a change on a number unless the squad has chosen a threshold. In a future implementation these records can feed a dashboard, so a squad and its leaders can see quality over time.
@@ -40,6 +42,7 @@ Check whether everything needed before merge is in place for this change. It is 
 - the automated tests and integration tests exist, cover the story's acceptance criteria, and pass
 - the adversarial review was carried out, and every finding has an answer (fixed, or rebutted with evidence)
 - the security review was carried out, and the security scanners pass
+- the change emits the logs, metrics, traces and alerts the release monitors and the brief's success measures need, and no sensitive data is written to the logs
 
 Say complete or not complete. If it is not complete, say exactly what is missing. Do not judge whether the change is a good one, only whether it is complete.
 Also record the evidence for this change: the percentage of code covered by unit tests, the number of automated and integration tests, the number of security flaws found and fixed, and the number of adversarial review findings and how each was answered. Report these as figures. Do not fail the change on a figure unless a threshold has been set.
@@ -47,7 +50,7 @@ Finish with a one-line summary.
 ```
 
 ## Failure modes
-- **Checking that something exists, not that it means anything.** A test that asserts nothing, or an adversarial review with no findings and no evidence it ran, is not a pass.
+- **Checking that something exists, not that it means anything.** A test that asserts nothing, an adversarial review with no findings and no evidence it ran, or a log line that exists but would never show a failure, is not a pass.
 - **Gaming it** by producing the artefacts to get through. The reviewing engineer's code review and manual test are the defence.
 - **Becoming a bottleneck.** It should be fast and quiet when the change is complete.
 - **Measures turned into targets,** such as a coverage percentage that people learn to hit without improving the tests. Record them as evidence and watch the trend.

@@ -71,6 +71,9 @@ Also say what we will track, for example failures, challenges, challenges upheld
 ## Constraints
 Cost, deadlines, compliance, performance, dependencies, anything the solution must respect.
 
+### How customers can take releases
+How often can customers absorb a change? For example, whether they can take changes as soon as they are ready, at the end of an iteration, or only on a set schedule, and any contract terms or regulation behind that. Say what the customer expects, not how to release. The squad uses it to choose a [release pattern](../docs/stages/06-release.md#release-patterns).
+
 ## Sensitive data and where it applies
 What kinds of sensitive data does this involve, if any? For example personal data, payment card details, or health information. Different data needs different levels of protection, so the squad uses this to judge how much protection the design needs.
 
