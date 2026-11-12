@@ -13,6 +13,7 @@ The [verification-checker](../agents/verification-checker.md) records these at s
 - **Tests:** the number of automated tests and integration tests
 - **Security flaws:** found, and how many were fixed
 - **Adversarial review findings:** raised, and how each was answered
+- **Observability:** the signals the change emits for the release monitors
 - **Time in review**
 
 ## Flow

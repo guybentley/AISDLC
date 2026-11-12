@@ -2,8 +2,8 @@
 
 ```
 Opportunity brief -> Design workshop -> Stories & sizing -> Build -> Verification -> Release
-   (Product)           (Product +          (Product +         (Engineer)  (Review and      (On-call)
-                        Platform +          Engineering)                    manual test)
+   (Product)           (Product +          (Product +         (Engineer)  (Review and      (Depends on the
+                        Platform +          Engineering)                    manual test)     release pattern)
                         Software)
 ```
 
@@ -27,4 +27,4 @@ If the criteria are weak, all of these are weak. Investment in stages 1 to 3 pay
 | Stage 3 | Stories accepted (scope, priority, acceptance criteria); estimates and sizes accepted | Product for the stories; engineering for the estimates, after the right-size-checker's review. Then the readiness-checker confirms every story is estimated and has acceptance criteria before it moves to build |
 | Stage 4 | Pull request opened | Owning engineer |
 | Stage 5 | Merge | The reviewing engineer, after the verification-checker confirms everything is in place |
-| Stage 6 | Go / no-go on ambiguous signals | Release owner |
+| Stage 6 | Release, and go / no-go on ambiguous signals | Depends on the release pattern: as soon as ready, human-decided, or scheduled |
