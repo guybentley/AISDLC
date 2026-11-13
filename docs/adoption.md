@@ -20,6 +20,8 @@ For AI products and projects, the quality gate is the same as for software. On t
 
 The principles apply to data warehousing and ETL work in the same way. The difference is usually the customer: it may be an internal team or other engineering teams who consume the data, not an end customer. The opportunity brief, the success measure and the unhappy paths all still apply, written from that customer's point of view. For example, the measure might be how many consuming teams can answer a question without asking for a special extract, and an unhappy path might be a consumer finding wrong or late data and needing to know who to raise it with.
 
+For what changes at each stage for data and AI work, see [Data and AI work](data-and-ai.md).
+
 ## Research and delivery
 
 Anything that results in a delivered product is in scope, including AI products and projects.

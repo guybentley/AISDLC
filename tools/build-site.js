@@ -18,7 +18,7 @@ const groups = [
     'agents/design-attacker.md', 'agents/story-writer.md', 'agents/right-size-checker.md',
     'agents/readiness-checker.md', 'agents/verification-checker.md', 'agents/security-agent.md', 'agents/test-author.md', 'agents/adversarial-reviewer.md',
     'agents/release-verifier.md', 'agents/_template.md'] },
-  { name: 'Running it', files: ['docs/adoption.md', 'docs/metrics.md'] },
+  { name: 'Running it', files: ['docs/adoption.md', 'docs/data-and-ai.md', 'docs/metrics.md'] },
   { name: 'Templates', files: ['templates/opportunity-brief.md', 'templates/story-map.md', 'templates/test-scenario.md', 'templates/domain-context.md'] },
 ];
 
