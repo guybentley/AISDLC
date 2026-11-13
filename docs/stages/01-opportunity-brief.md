@@ -8,6 +8,8 @@
 
 Capture the customer opportunity, the outcome that matters, and the constraints - without prescribing a solution. An opportunity does not have to be a problem to solve. It can be a pure benefit the customer would value.
 
+The customer may be internal. Where a squad delivers data, a platform or a tool for other teams, those teams are the customer, and the brief, the measure, the workflows and the unhappy paths are written from their point of view. "Customer" on every page of this framework includes them.
+
 ## Work that arrives outside the process
 
 Ideas and requests do not always arrive through this stage. A stakeholder, a support ticket or a colleague may add an item straight into the product backlog. The [backlog-watcher](../../agents/backlog-watcher.md) looks for these and brings them to the product manager with suggestions: link the item to an existing opportunity, start a new opportunity brief, merge it as a duplicate, take the fast route for a genuine bug, park it, or decline it with a reason. The product manager decides. The aim is that good ideas are not lost and that everything in the backlog traces back to a customer opportunity.
@@ -51,7 +53,7 @@ For example, if the opportunity is to improve customer onboarding:
 
 Sometimes there is no baseline, because the opportunity is new or breaks new ground. Then say so in the brief, and say how a baseline will be established. For example, measure the first release, or use a comparable product or a market figure as a reference. Treat the target as a first estimate, to be revisited when real data arrives.
 
-The same applies to a benefit. Choose a measure of what the customer gains, such as the share of customers who use a new capability, or the time they save on a task. Record today's position and set a target.
+The same applies to a benefit. Choose a measure of what the customer gains, such as the share of customers who use a new capability, or the time they save on a task. Record today's position and set a target. For an internal customer, such as a team that consumes data, the measure might be how many consuming teams can answer a question without asking for a special extract.
 
 The brief records the measure, the baseline where there is one, and the target. It does not say how to reach the target. That is for the squad to work out in later stages.
 

@@ -6,7 +6,7 @@
 Who are they, and what are they trying to do?
 
 ## Opportunity
-What is the opportunity for the customer? It may be a problem to solve, or a benefit they would value. Write it in plain language, so that anyone in your industry could read it and understand it. No internal jargon, code names or unexplained acronyms. Use a number where you can.
+What is the opportunity for the customer? It may be a problem to solve, or a benefit they would value. Write it in plain language, so that anyone in your industry could read it and understand it. No internal jargon, code names or unexplained acronyms. Use a number where you can. The customer may be another team that uses what you deliver, such as a team that consumes data. If so, write it from their point of view.
 
 ## Evidence
 How do we know? List each source and what it showed. Prefer more than one method.
