@@ -50,7 +50,7 @@ Read the [adoption](docs/adoption.md) page. In short: baseline the [metrics](doc
 
 ## Principles
 
-Read [docs/principles.md](docs/principles.md) first. In short: people and agents work as a pair and swap roles; the opportunity, the design and the acceptance criteria come first; verification is independent from creation; people hold defined gates; a squad owns the solution; and context lives where agents can read it, with an owner.
+Read [docs/principles.md](docs/principles.md) first. In short: people and agents pair and swap roles; opportunity, design and acceptance criteria come before code; nothing verifies itself; people hold gates, not agents; a squad owns the solution from inception to production; and context lives where agents can read it, but humans own it.
 
 ## Contributing
 
