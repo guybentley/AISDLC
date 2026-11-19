@@ -2,7 +2,7 @@
 
 An open framework for running a software delivery lifecycle as a partnership: engineers and AI agents work as a pair, agents bring speed, and engineers bring judgment and accountability.
 
-> **Status:** all six stages are drafted and are being tried in practice. Expect change.
+> **Status:** all six stages are drafted and formed from real experience with engineering teams across software, data and AI. Expect change.
 
 ## The idea
 
